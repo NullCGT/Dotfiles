@@ -1,0 +1,18 @@
+[icons]
+# IcoMoon
+Firefox = ""
+Alacritty = ""
+Gucharmap = ""
+Steam = ""
+Thunderbird = ""
+Spotify = ""
+keepassxc = ""
+libreoffice-startcenter = ""
+Soffice = ""
+libreoffice-writer = ""
+
+[options]
+no_icon_names = true
+
+[general]
+default_icon = ""

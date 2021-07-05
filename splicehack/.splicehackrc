@@ -1,0 +1,206 @@
+####### AntiGulp's SpliceHack RC File ########
+# Hi, I'm AntiGulp!
+# Feel free to copy any or all of these settings for yourself.
+
+####### SpliceHack Personalization #######
+OPTIONS=birdname:Frightful
+OPTIONS=dragonname:Draciel
+OPTIONS=monkeyname:monke
+
+####### SpliceHack Challenges #######
+#OPTIONS=marathon
+#OPTIONS=clumsy
+#OPTIONS=hallucinating
+#OPTIONS=heaven_or_hell
+
+######## Personalization ########
+OPTIONS=name:Antigulp
+OPTIONS=catname:Catra
+OPTIONS=dogname:Big Dang Doggo
+OPTIONS=horsename:Bad Horse
+OPTIONS=gender:female
+OPTIONS=fruit:pumpkin muffin
+
+####### Challenges #######
+OPTIONS=!blind
+OPTIONS=!nudist
+
+####### Verbose ######
+OPTIONS=verbose
+
+####### Numpad #######
+OPTIONS=number_pad:0
+
+####### Gameplay #######
+OPTIONS=paranoid_confirm:quit pray wand-break Were-change
+OPTIONS=pushweapon
+OPTIONS=autodig
+OPTIONS=autoopen
+AUTOCOMPLETE=travel
+AUTOCOMPLETE=twoweapon
+
+######## Autopickup #######
+OPTIONS=autopickup
+OPTIONS=pickup_types:?$/
+OPTIONS=pickup_thrown
+
+######## News and Mail ########
+OPTIONS=news
+OPTIONS=mail
+
+####### High Scores #######
+OPTIONS=scores:10t 2a o
+
+######## Display ########
+OPTIONS=boulder:0
+OPTIONS=symset:DECgraphics
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+OPTIONS=lit_corridor
+OPTIONS=use_darkgray
+OPTIONS=!vt_tiledata
+
+######## GUI #########
+OPTIONS=windowtype:curses
+OPTIONS=showexp
+OPTIONS=showscore
+OPTIONS=hitpointbar
+OPTIONS=force_invmenu
+OPTIONS=time
+OPTIONS=disclose:+i +a +v +g +c +o
+OPTIONS=menu_objsyms
+OPTIONS=statuslines:3
+OPTIONS=!implicit_uncursed
+OPTIONS=toptenwin
+
+######## Curses-Specific GUI ########
+OPTIONS=perm_invent
+OPTIONS=align_status:bottom
+OPTIONS=align_message:top
+OPTIONS=petattr:U
+OPTIONS=popup_dialog
+OPTIONS=clicklook
+OPTIONS=mouse_support
+
+######## Menu Colors ########
+OPTIONS=color, menucolors
+# Colored Items
+MENUCOLOR=" red (gem|dragon)"=red
+MENUCOLOR=" blue (gem|dragon)"=brightblue
+MENUCOLOR=" green (gem|dragon)"=brightgreen
+MENUCOLOR=" orange (gem|dragon)"=red
+MENUCOLOR=" white (gem|dragon)"=white
+MENUCOLOR=" black (gem|dragon)"=black
+MENUCOLOR=" yellowish brown gem"=brown
+MENUCOLOR=" yellow (gem|dragon)"=yellow
+MENUCOLOR=" violet (gem|dragon)"=magenta
+# BUC
+MENUCOLOR=" blessed "=cyan
+MENUCOLOR=" uncursed "=green
+MENUCOLOR=" cursed "=orange
+MENUCOLOR="holy water"=cyan
+MENUCOLOR="unholy water"=orange
+# Equipment
+MENUCOLOR=" blessed .* \((being|wielded|weapon)"=cyan&underline
+MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=green&underline
+MENUCOLOR=" cursed .* \((being|wielded|weapon)"=orange&underline
+MENUCOLOR=" \((being|wielded|weapon)"=normal&underline
+# Quest stuff
+MENUCOLOR="named real"=brightblue&bold
+MENUCOLOR="bell of opening"=brightblue&bold
+MENUCOLOR="silver bell"=brightblue&bold
+MENUCOLOR="Book of the Dead"=brightblue&bold
+MENUCOLOR="papyrus spellbook"=brightblue&bold
+MENUCOLOR="candelabrum"=brightblue&bold
+# Good Stuff
+MENUCOLOR="wishing"=brightblue&bold
+# Bad Stuff
+MENUCOLOR="cheap plastic imitation"=orange
+MENUCOLOR="named fake"=orange
+MENUCOLOR="wand of cancellation"=brightmagenta&bold
+MENUCOLOR="loadstone"=brightmagenta&underline
+# Forgotten Spell
+MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta
+# Misc
+MENUCOLOR="gold piece"=yellow
+
+######## Status Highlights ########
+OPTIONS=statushilites:10
+# Hit Points
+OPTIONS=hilite_status:hitpoints/100%/white
+OPTIONS=hilite_status:hitpoints/<100%/brightgreen
+OPTIONS=hilite_status:hitpoints/<80%/green
+OPTIONS=hilite_status:hitpoints/<60%/yellow
+OPTIONS=hilite_status:hitpoints/<40%/red
+OPTIONS=hilite_status:hitpoints/<20%/red&bold
+OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
+# Power
+OPTIONS=hilite_status:power/100%/white
+OPTIONS=hilite_status:power/<100%/brightgreen
+OPTIONS=hilite_status:power/<100%/green
+OPTIONS=hilite_status:power/<60%/yellow
+OPTIONS=hilite_status:power/<40%/red
+OPTIONS=hilite_status:power/<20%/red&bold
+OPTIONS=hilite_status:power-max/up/green&bold/down/red&bold
+# Status
+OPTIONS=hilite_status:armor-class/always/cyan/up/red&bold/down/green&bold
+OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange/strained/orange/overtaxed/red/overloaded/red
+OPTIONS=hilite_status:experience-level/up/green&bold/down/red&bold
+OPTIONS=hilite_status:experience/up/white&bold/down/gray&bold
+OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red/satiated/yellow
+OPTIONS=hilite_status:condition/major_troubles/red/minor_troubles/yellow//movement/cyan
+OPTIONS=hilite_status:alignment/chaotic/red/lawful/white/neutral/gray
+OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
+OPTIONS=hilite_status:characteristics/up/green&bold/down/red&bold
+
+######## Messages ########
+
+# Annoying messages
+MSGTYPE=hide "You displaced *"
+MSGTYPE=hide "You swap places with *"
+MSGTYPE=norep "Your tentacles suck the .*"
+MSGTYPE=norep "You see here a *"
+MSGTYPE=norep "You see here an *"
+# Wresting
+MSGTYPE=stop "You wrest .*"
+# Vibrating Square
+MSGTYPE=stop "You feel a strange vibration under your *."
+MSGTYPE=stop "You see a strange vibration under *."
+MSGTYPE=stop "You feel a strange vibration beneath you."
+MSGTYPE=stop "You find a vibrating square."
+# Searching
+MSGTYPE=stop "You find a hidden .*"
+# Delayed instadeaths
+MSGTYPE=stop "The .* (grabs|swings itself around) you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "Your limbs are getting oozy."
+MSGTYPE=stop "Your skin begins to peel away."
+MSGTYPE=stop "You are turning into a green slime."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You're gasping for air."
+MSGTYPE=stop "Your blood is having trouble reaching your brain."
+MSGTYPE=stop "You can no longer breathe."
+MSGTYPE=stop "You're turning blue."
+MSGTYPE=stop "Your consciousness is fading."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel much worse."
+MSGTYPE=stop "You feel even worse."
+# Potentially dangerous situations
+MSGTYPE=stop "You fail to cast the spell correctly."
+MSGTYPE=stop "You see here a c(hi|o)ckatrice corpse."
+MSGTYPE=stop "You are beginning to feel weak."
+MSGTYPE=stop "So thou thought thou couldst .*"
+MSGTYPE=stop "Double Trouble..."
+# Near-death experiences
+MSGTYPE=stop "You hear the wailing of the Banshee..."
+MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
+
+######## Developer Settings ########
+#OPTIONS=playmode:debug
+#OPTIONS=sanity_check
+#OPTIONS=nopet
+#BIND=^q:wizmakemap 

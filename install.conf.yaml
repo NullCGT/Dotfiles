@@ -1,0 +1,52 @@
+- defaults:
+      link:
+          relink: true
+          force: true
+
+- clean: ['~']
+
+- link:
+    ~/.nethackrc:
+        path: nethack/.nethackrc
+    ~/.splicehackrc:
+        path: splicehack/.splicehackrc
+    ~/.zshrc:
+        path: zsh/.zshrc
+    ~/.p10k.zsh:
+        path: zsh/.p10k.zsh
+    ~/.config/alacritty:
+        create: true
+        path: alacritty
+    ~/.config/nvim:
+        create: true
+        path: nvim
+    ~/.config/polybar:
+        create: true
+        path: polybar
+    ~/.config/ranger:
+        create: true
+        path: ranger
+    ~/.config/htop:
+        create: true
+        path: htop
+    ~/.config/compton:
+        create: true
+        path: compton
+    ~/.config/i3:
+        create: true
+        path: i3
+    ~/.config/dunst:
+        create: true
+        path: dunst
+    ~/.config/compton:
+        create: true
+        path: compton
+    ~/.config/conky:
+        create: true
+        path: conky
+    ~/.config/rofi:
+        create: true
+        path: rofi
+    ~/.config/neofetch:
+        create: true
+        path: neofetch

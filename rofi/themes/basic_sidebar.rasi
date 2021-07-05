@@ -1,0 +1,31 @@
+/* A very basic sidebar menu.
+ * By Kestrel Gregorich-Trevor */
+* {
+    // Basic Properties
+    background-color: black;
+    text-color: white;
+    show-icons: true;
+    sort: true;
+    sidebar-mode: true;
+}
+window {
+    height: 100%;
+    width: 20%;
+    padding: 5;
+    xoffset: 5;
+    yoffset: 5;
+    location: east;
+    anchor: east;
+}
+entry {
+    expand: true;
+    width: 10%;
+}
+element {
+    padding: 10;
+}
+element selected {
+    xoffset: 5;
+    background-color: blue;
+}
+/* vim:ft=css
