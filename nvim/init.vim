@@ -3,14 +3,21 @@
 set number
 set showcmd
 set cursorline
-set lazyredraw
 set visualbell
 set mouse=a
+set showmatch
 
-" Indentation
+" Performance
 " ---------------------------------------------------------
+set lazyredraw
+
+" Indentation and Filetypes
+" ---------------------------------------------------------
+filetype on
 filetype indent on
+filetype plugin on
 set autoindent
+set shiftwidth=4
 
 " Autocomplete
 " ---------------------------------------------------------
@@ -25,7 +32,8 @@ set smartcase
 
 " Text Editing
 " ---------------------------------------------------------
-set spell
+"set spell
+set scrolloff=2
 
 " Plugin Management
 " ---------------------------------------------------------
@@ -38,14 +46,15 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 Plug 'dguo/blood-moon', {'rtp': 'applications/vim'}
+Plug 'tpope/vim-surround'
 call plug#end()
 
-" NERDTree Configuration
+" Autocommands
 " ---------------------------------------------------------
-" Start NERDTree. If a file is specified, move the cursor to its window.
+" If a spile is specified, start NERDTree.
 " If a file is not specified, kick off Startify.
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if !argc() | Startify | endif | NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+autocmd VimEnter * if !argc() | Startify | if !exists('s:std_in') && v:this_session == '' | NERDTree | wincmd p | endif | endif 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -61,7 +70,8 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-
+imap jk <Esc>
+imap kj <Esc>
 " Keys
 " ---------------------------------------------------------
 let mapleader=","
