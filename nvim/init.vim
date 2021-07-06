@@ -49,13 +49,33 @@ Plug 'dguo/blood-moon', {'rtp': 'applications/vim'}
 Plug 'tpope/vim-surround'
 call plug#end()
 
+" Plugin Options
+" ---------------------------------------------------------
+" Pixelart from https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text
+let g:startify_custom_header = [
+    \'          ▀████▀▄▄              ▄█ ',
+    \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
+    \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
+    \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
+    \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
+    \'  ▀▄     ▀▄  █     ▀██▀     ██▄█      Welcome to NeoVim!',
+    \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
+    \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
+    \'   █   █  █      ▄▄           ▄▀   ',
+    \]
+let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
 " Autocommands
 " ---------------------------------------------------------
-" If a spile is specified, start NERDTree.
-" If a file is not specified, kick off Startify.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if !argc() | Startify | if !exists('s:std_in') && v:this_session == '' | NERDTree | wincmd p | endif | endif 
-" Exit Vim if NERDTree is the only window left.
+" Make Pikachu the correct color!
+autocmd User StartifyReady highlight StartifyHeader ctermfg=226 
+" Exit VIM if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
