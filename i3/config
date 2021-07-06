@@ -15,7 +15,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 12
+font pango:MesloLGS NF
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -34,8 +34,8 @@ exec_always --no-startup-id $HOME/.cargo/bin/i3wsr --config ~/.config/i3/i3wsr.t
 # Start up the spotify listener for polybar
 exec_always --no-startup-id spotify-listener
 
-# Start compton
-exec_always --no-startup-id compton
+# Start picom
+exec_always --no-startup-id "picom --config ~/.config/picom/picom.conf"
 
 # Screenshot with flameshot
 bindsym Print exec flameshot gui

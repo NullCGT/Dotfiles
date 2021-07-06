@@ -29,18 +29,15 @@
     ~/.config/htop:
         create: true
         path: htop
-    ~/.config/compton:
-        create: true
-        path: compton
     ~/.config/i3:
         create: true
         path: i3
     ~/.config/dunst:
         create: true
         path: dunst
-    ~/.config/compton:
+    ~/.config/picom:
         create: true
-        path: compton
+        path: picom
     ~/.config/conky:
         create: true
         path: conky
