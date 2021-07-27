@@ -1,18 +1,41 @@
 [icons]
-# IcoMoon
-Firefox = ""
-Alacritty = ""
-Gucharmap = ""
-Steam = ""
-Thunderbird = ""
-Spotify = ""
-keepassxc = ""
-libreoffice-startcenter = ""
-Soffice = ""
-libreoffice-writer = ""
+# NerdFonts
+# Web
+Firefox = ""
+Alacritty = ""
+# Games
+retroarch = ""
+dolphin = ""
+slippi = ""
+nethack = "ﱾ"
+brogue = "理"
+minecraft = ""
+Gucharmap = ""
+Steam = "戮"
+cataclysm = ""
+sil-q = "ﲅ"
+# General
+# Coding
+Thunderbird = ""
+Spotify = ""
+keepassxc = ""
+libreoffice-startcenter = ""
+Soffice = ""
+libreoffice-writer = ""
+libreoffice-math = ""
+libreoffice-calc = ""
+lightcord = "ﭮ"
+VSCodium = ""
+gimp = ""
+java = ""
+wine = ""
+wineskin = ""
+winebottler = ""
+gnucash = "流"
+protonmail-bridge = ""
 
 [options]
 no_icon_names = true
 
 [general]
-default_icon = ""
+default_icon = ""

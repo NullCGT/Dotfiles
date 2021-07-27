@@ -2,8 +2,8 @@
  * By Kestrel Gregorich-Trevor */
 * {
     // Basic Properties
-    background-color: black;
-    text-color: white;
+    background-color: #011627;
+    text-color: #acb4c2;
     show-icons: true;
     sort: true;
     sidebar-mode: true;
@@ -26,6 +26,7 @@ element {
 }
 element selected {
     xoffset: 5;
-    background-color: blue;
+    background-color: #82aaff;
+    text-color: #011627;
 }
 /* vim:ft=css

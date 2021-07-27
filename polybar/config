@@ -1,9 +1,9 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000
+background = #011627
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #ffffff
+foreground = #acb4c2
 foreground-alt = #555
 primary = ${xrdb:color1:#ffb52a}
 secondary = ${xrdb:color2:#e60053}
@@ -34,7 +34,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = DejaVu Sans Mono:size=12
+font-0 = MesloLGS NF:size=12
 font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-2 = icomoon\-free:style=Regular;size=12;0
 ;font-2 = siji:pixelsize=12;0

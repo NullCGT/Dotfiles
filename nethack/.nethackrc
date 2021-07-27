@@ -3,75 +3,150 @@
 # Feel free to copy any or all of these settings for yourself.
 
 ######## Personalization ########
+# Options pertaining to the personalization of your character or game.
+# The name of your character.
 OPTIONS=name:Antigulp
+# Default name for your starting pet if it is a cat.
+# Currently set to Catra, from She-Ra and the Princesses of Power.
 OPTIONS=catname:Catra
-OPTIONS=dogname:Big Dang Doggo
-OPTIONS=horsename:Bad Horse
+# Default name for your starting pet if it is a dog.
+# Currently set to Huan, from the Silmarillion.
+OPTIONS=dogname:Huan
+# Default name to your starting pet if it is a horse.
+# Currently set to Windfola, the steed of Eowyn from the Lord of the Rings.
+OPTIONS=horsename:Windfola
+# Starting gender.
 OPTIONS=gender:female
+# Fruit name. Fruits are renamed to this. Defaults to "slime mold."
 OPTIONS=fruit:pumpkin muffin
+# Uncomment this line to start without a pet.
+#OPTIONS=nopet
 
 ####### Challenges #######
-OPTIONS=!blind
-OPTIONS=!nudist
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
 
 ####### Verbose ######
+# Disabling verbose will silence many extraneous messages. Useful in the 
+# Plane of Fire.
 OPTIONS=verbose
 
 ####### Numpad #######
+# Method of controlling the character.
+# Vikeys
 OPTIONS=number_pad:0
+# Number Pad
+#OPTIONS=number_pad:1
 
 ####### Gameplay #######
+# Miscelaneous gampelay options.
+# Potentially dangerous actions that should require explicit confirmation.
 OPTIONS=paranoid_confirm:quit pray wand-break Were-change
+# Push unwielded weapon to the alternate weapon slot.
 OPTIONS=pushweapon
+# Automatically dig when moving against a wall while wielding a pickaxe.
 OPTIONS=autodig
+# Automatically open doors when moving into them.
 OPTIONS=autoopen
+
+####### Autocomplete #######
+# Extended commands to autocomplete.
+# Autocomplete the travel command, since it is used often.
 AUTOCOMPLETE=travel
+# Autocomplete the twoweapon command, since it is used often.
 AUTOCOMPLETE=twoweapon
 
 ######## Autopickup #######
+# Autopickup options.
+# Enable autopickup by default.
 OPTIONS=autopickup
+# Define which item symbols to automatically pick up.
 OPTIONS=pickup_types:?$/
+# Automatically pick up thrown or fired projectiles.
 OPTIONS=pickup_thrown
 
 ######## News and Mail ########
+# Options relating to news and mail.
+# Enable news functionality.
 OPTIONS=news
+# Allow other users to send you mail if you are on a public server.
 OPTIONS=mail
 
 ####### High Scores #######
+# High score options.
+# Format the high score list.
 OPTIONS=scores:10t 2a o
 
 ######## Display ########
-OPTIONS=boulder:0
+# Display options.
+# Display boulders with the zero symbol for increased visibility.
+SYMBOLS=S_boulder:0
+# Display golems with the seven symbol for increased visibility.
+SYMBOLS=S_golem:7
+# Display ghosts with the eight symbol for increased visibility.
+SYMBOLS=S_ghost:8
+# The symset to use when displaying characters.
 OPTIONS=symset:DECgraphics
+# Highlight tame monsters.
 OPTIONS=hilite_pet
+# Highlight piles of items.
 OPTIONS=hilite_pile
+# Visually distinguish lit corridors from dark corridors.
 OPTIONS=lit_corridor
+# Use the dark gray color
 OPTIONS=use_darkgray
+# Tile data is disabled. To enable tile data, this must be toggled, and the
+# curses interface must be disabled.
 OPTIONS=!vt_tiledata
 
 ######## GUI #########
+# GUI Options
+# The type of GUI to use, such as curses or tty.
 OPTIONS=windowtype:curses
+# Show experience on the status line.
 OPTIONS=showexp
+# Show the score on the status line.
 OPTIONS=showscore
+# Display a visual bar to indicate hit points.
 OPTIONS=hitpointbar
+# Force the inventory menu to appear, rather than asking the player what item to
+# use from a list of characters.
 OPTIONS=force_invmenu
+# Display the turn count on the status line.
 OPTIONS=time
+# Define which prompts appear at the end of the game.
 OPTIONS=disclose:+i +a +v +g +c +o
+# Show object symbols in the menu if possible.
 OPTIONS=menu_objsyms
+# Split the status line into three separate lines.
 OPTIONS=statuslines:3
+# Do not assume items are uncursed by default.
 OPTIONS=!implicit_uncursed
+# Show the top ten scores.
 OPTIONS=toptenwin
 
 ######## Curses-Specific GUI ########
+# Options for the curses interface.
+# Display the inventory onscreen at all times.
 OPTIONS=perm_invent
+# Display the status bar at the bottom of the screen.
 OPTIONS=align_status:bottom
+# Display the message log at the top of the screen.
 OPTIONS=align_message:top
+# Highlight tame monsters by underlining them.
 OPTIONS=petattr:U
+# Show dialogue in popup menus.
 OPTIONS=popup_dialog
+# Allow the user to look at things by using the mouse.
 OPTIONS=clicklook
+# Enable mouse support.
 OPTIONS=mouse_support
 
 ######## Menu Colors ########
+# Options relating to menu colors.
 OPTIONS=color, menucolors
 # Colored Items
 MENUCOLOR=" red (gem|dragon)"=red
@@ -93,7 +168,7 @@ MENUCOLOR="unholy water"=orange
 MENUCOLOR=" blessed .* \((being|wielded|weapon)"=cyan&underline
 MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=green&underline
 MENUCOLOR=" cursed .* \((being|wielded|weapon)"=orange&underline
-MENUCOLOR=" \((being|wielded|weapon)"=normal&underline
+MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
 # Quest stuff
 MENUCOLOR="named real"=brightblue&bold
 MENUCOLOR="bell of opening"=brightblue&bold
@@ -110,10 +185,11 @@ MENUCOLOR="wand of cancellation"=brightmagenta&bold
 MENUCOLOR="loadstone"=brightmagenta&underline
 # Forgotten Spell
 MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta
-# Misc
+# Money
 MENUCOLOR="gold piece"=yellow
 
 ######## Status Highlights ########
+# Options relating to status highlighting.
 OPTIONS=statushilites:10
 # Hit Points
 OPTIONS=hilite_status:hitpoints/100%/white
@@ -143,23 +219,25 @@ OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
 OPTIONS=hilite_status:characteristics/up/green&bold/down/red&bold
 
 ######## Messages ########
-
-# Annoying messages
+# Options relating to the display of messages.
+# Annoying messages. These are hidden entirely.
 MSGTYPE=hide "You displaced *"
 MSGTYPE=hide "You swap places with *"
 MSGTYPE=norep "Your tentacles suck the .*"
 MSGTYPE=norep "You see here a *"
 MSGTYPE=norep "You see here an *"
-# Wresting
+# Wresting the final charge from a wand is easy to miss.
 MSGTYPE=stop "You wrest .*"
-# Vibrating Square
+# The Vibrating Square is easy to miss.
 MSGTYPE=stop "You feel a strange vibration under your *."
 MSGTYPE=stop "You see a strange vibration under *."
 MSGTYPE=stop "You feel a strange vibration beneath you."
 MSGTYPE=stop "You find a vibrating square."
-# Searching
+# Automatically stop when something hidden is found, in order to prevent wasted
+# turns while searching.
 MSGTYPE=stop "You find a hidden .*"
-# Delayed instadeaths
+# Delayed instadeaths are very dangerous, and skipping past them in the
+# message log often means certain death.
 MSGTYPE=stop "The .* (grabs|swings itself around) you!"
 MSGTYPE=stop "You don't feel very well."
 MSGTYPE=stop "You are turning a little green."
@@ -178,18 +256,23 @@ MSGTYPE=stop "Your consciousness is fading."
 MSGTYPE=stop "You feel deathly sick."
 MSGTYPE=stop "You feel much worse."
 MSGTYPE=stop "You feel even worse."
-# Potentially dangerous situations
+# Potentially dangerous situations should stop the player as well.
 MSGTYPE=stop "You fail to cast the spell correctly."
 MSGTYPE=stop "You see here a c(hi|o)ckatrice corpse."
 MSGTYPE=stop "You are beginning to feel weak."
 MSGTYPE=stop "So thou thought thou couldst .*"
 MSGTYPE=stop "Double Trouble..."
-# Near-death experiences
+# Stop the player if they receive a notification about having low hit points.
 MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
 
 ######## Developer Settings ########
+# These options are generally only useful when debugging the game.
+# Enable debug (wizard) mode.
 #OPTIONS=playmode:debug
+# Enable sanity checks.
 #OPTIONS=sanity_check
-#OPTIONS=nopet
+# Bind the command to regenerate a map to a key.
 #BIND=^q:wizmakemap 
+# Define the path to the wizkit file.
+#WIZKIT=.wizkit

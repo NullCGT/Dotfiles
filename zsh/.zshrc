@@ -124,15 +124,24 @@ function update_wallpaper(){
     sed -i "s#file=.*#file=$1#" "$HOME/.config/nitrogen/bg-saved.cfg"
     wal -i "$1" &
 }
-# Nmcli_tui inherits terminal color scheme
-#function nmcli_tui_colors(){
-#    nmcli_tui
-#    source ~/.zshrc
-#    # (cat ~/.cache/wal/sequences &)
-#}
-#alias nmcli_tui=nmcli_tui_colors
 # Finally, update the wallpaper color scheme on startup.
 #(cat ~/.cache/wal/sequences &)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kestrel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kestrel/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kestrel/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kestrel/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
