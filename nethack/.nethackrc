@@ -2,6 +2,12 @@
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 
+#SOUNDDIR=/home/kestrel/Workspace/NetHack/sounds/default
+#SOUND=MESG "This door is locked" "lock.wav" 100
+#SOUND=MESG "The door opens" "open.wav" 100
+#SOUND=MESG "\$ - .* gold pieces" "coins.wav" 100
+#SOUND=MESG ". - a scroll" "paper.wav" 100
+
 ######## Personalization ########
 # Options pertaining to the personalization of your character or game.
 # The name of your character.
@@ -133,7 +139,7 @@ OPTIONS=toptenwin
 # Display the inventory onscreen at all times.
 OPTIONS=perm_invent
 # Display the status bar at the bottom of the screen.
-OPTIONS=align_status:bottom
+OPTIONS=align_status:left
 # Display the message log at the top of the screen.
 OPTIONS=align_message:top
 # Highlight tame monsters by underlining them.
@@ -148,27 +154,52 @@ OPTIONS=mouse_support
 ######## Menu Colors ########
 # Options relating to menu colors.
 OPTIONS=color, menucolors
-# Colored Items
-MENUCOLOR=" red (gem|dragon)"=red
-MENUCOLOR=" blue (gem|dragon)"=brightblue
-MENUCOLOR=" green (gem|dragon)"=brightgreen
-MENUCOLOR=" orange (gem|dragon)"=orange
-MENUCOLOR=" white (gem|dragon)"=white
-MENUCOLOR=" black (gem|dragon)"=black
-MENUCOLOR=" yellowish brown gem"=brown
-MENUCOLOR=" yellow (gem|dragon)"=yellow
-MENUCOLOR=" violet (gem|dragon)"=magenta
 # BUC
-MENUCOLOR=" blessed "=cyan
-MENUCOLOR=" uncursed "=green
+MENUCOLOR=" blessed "=brightcyan
+MENUCOLOR=" uncursed "=brightgreen
 MENUCOLOR=" cursed "=orange
-MENUCOLOR="holy water"=cyan
+MENUCOLOR="holy water"=brightcyan
 MENUCOLOR="unholy water"=orange
+# Colored Items
+MENUCOLOR=" white (gem|dragon|glass)"=white
+MENUCOLOR=" red (gem|dragon|glass)"=red
+MENUCOLOR=" blue (gem|dragon|glass)"=brightblue
+MENUCOLOR=" green (gem|dragon|glass)"=green
+MENUCOLOR=" orange (gem|dragon|glass)"=orange
+MENUCOLOR=" white (gem|dragon|glass)"=white
+MENUCOLOR=" black (gem|dragon|glass)"=black
+MENUCOLOR=" yellowish brown (gem|glass)"=brown
+MENUCOLOR=" yellow (gem|dragon|glass)"=yellow
+MENUCOLOR=" violet (gem|dragon|glass)"=magenta
+MENUCOLOR="dilithium crystal"=white
+MENUCOLOR="diamond"=white
+MENUCOLOR="rubies"=red
+MENUCOLOR="emeralds"=green
+MENUCOLOR="jacinth stone"=red
+MENUCOLOR="sapphire"=blue
+MENUCOLOR="black opal"=black
+MENUCOLOR="turquoise stone"=blue
+MENUCOLOR="citrine stone"=yellow
+MENUCOLOR="aquamarine stone"=green
+MENUCOLOR="amber stone"=brown
+MENUCOLOR="topaz stone"=brown
+MENUCOLOR="jet stone"=black
+MENUCOLOR="opal"=white
+MENUCOLOR="chrysoberyl stone"=yellow
+MENUCOLOR="garnet"=red
+MENUCOLOR="amethyst stone"=magenta
+MENUCOLOR="jasper stone"=red
+MENUCOLOR="fluorite stone"=blue
+MENUCOLOR="jade stone"=green
+MENUCOLOR="obsidian stone"=black
+MENUCOLOR="agate stone"=orange
+MENUCOLOR="ruby$"=red
+MENUCOLOR="emerald$"=green
 # Equipment
+MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
 MENUCOLOR=" blessed .* \((being|wielded|weapon)"=cyan&underline
 MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=green&underline
-MENUCOLOR=" cursed .* \((being|wielded|weapon)"=orange&underline
-MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
+MENUCOLOR=" cursed .* \((being|wielded|weapon)"=red&underline
 # Quest stuff
 MENUCOLOR="named real"=brightblue&bold
 MENUCOLOR="bell of opening"=brightblue&bold
@@ -181,10 +212,13 @@ MENUCOLOR="wishing"=brightblue&bold
 # Bad Stuff
 MENUCOLOR="cheap plastic imitation"=orange
 MENUCOLOR="named fake"=orange
-MENUCOLOR="wand of cancellation"=brightmagenta&bold
+MENUCOLOR="wand (of|called) cancellation"=brightmagenta&bold
 MENUCOLOR="loadstone"=brightmagenta&underline
+MENUCOLOR="cockatrice corpse.*"=brightmagenta&underline
 # Forgotten Spell
 MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta
+# Skill Levels
+MENUCOLOR="(Basic|Skilled|Expert|Master|Grand Master)"=white
 # Money
 MENUCOLOR="gold piece"=yellow
 
@@ -202,21 +236,40 @@ OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
 # Power
 OPTIONS=hilite_status:power/100%/white
 OPTIONS=hilite_status:power/<100%/brightgreen
-OPTIONS=hilite_status:power/<100%/green
+OPTIONS=hilite_status:power/<80%/green
 OPTIONS=hilite_status:power/<60%/yellow
 OPTIONS=hilite_status:power/<40%/red
 OPTIONS=hilite_status:power/<20%/red&bold
 OPTIONS=hilite_status:power-max/up/green&bold/down/red&bold
-# Status
+# Armor Class
 OPTIONS=hilite_status:armor-class/always/cyan/up/red&bold/down/green&bold
+OPTIONS=hilite_status:armor-class/<0/brightcyan
+# Dungeon Level
+OPTIONS=hilite_status:dungeon-level/always/brown/changed/orange
+# Encumberance
 OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange/strained/orange/overtaxed/red/overloaded/red
+# Experience
 OPTIONS=hilite_status:experience-level/up/green&bold/down/red&bold
+OPTIONS=hilite_status:experience-level/=14/brightmagenta&bold
+OPTIONS=hilite_status:experience-level/=30/green&bold
 OPTIONS=hilite_status:experience/up/white&bold/down/gray&bold
+# Hunger
 OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red/satiated/yellow
+# Troubles
 OPTIONS=hilite_status:condition/major_troubles/red/minor_troubles/yellow//movement/cyan
-OPTIONS=hilite_status:alignment/chaotic/red/lawful/white/neutral/gray
+# Alignment
+OPTIONS=hilite_status:alignment/changed/brightmagenta&bold/chaotic/red/lawful/white/neutral/gray
+# Gold
 OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
-OPTIONS=hilite_status:characteristics/up/green&bold/down/red&bold
+# Characteristics
+OPTIONS=hilite_status:characteristics/up/brightgreen&bold/down/red&bold
+OPTIONS=hilite_status:characteristics/>18/brightcyan
+OPTIONS=hilite_status:characteristics/=18/brightblue
+OPTIONS=hilite_status:characteristics/<18/green
+OPTIONS=hilite_status:characteristics/<14/brown
+OPTIONS=hilite_status:characteristics/<11/gray
+OPTIONS=hilite_status:characteristics/<=8/orange
+OPTIONS=hilite_status:characteristics/<=6/red
 
 ######## Messages ########
 # Options relating to the display of messages.
