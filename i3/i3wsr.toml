@@ -1,41 +1,41 @@
 [icons]
-# NerdFonts
+# Material Design Icons
 # Web
-Firefox = ""
-Alacritty = ""
+Firefox = "󰈹"
+# Terminal
+Alacritty = "󰞷"
 # Games
-retroarch = ""
-dolphin = ""
-slippi = ""
-nethack = "ﱾ"
-brogue = "理"
-minecraft = ""
-Gucharmap = ""
-Steam = "戮"
-cataclysm = ""
-sil-q = "ﲅ"
+retroarch = "󰊖"
+dolphin = "󰮭"
+slippi = "󰮭"
+nethack = "󰒘"
+brogue = "󰞇"
+minecraft = "󰍳"
+Gucharmap = "󰏉"
+Steam = "󰓓"
+cataclysm = "󱡞"
+sil-q = "󰓥"
 # General
 # Coding
-Thunderbird = ""
-Spotify = ""
-keepassxc = ""
-libreoffice-startcenter = ""
-Soffice = ""
-libreoffice-writer = ""
-libreoffice-math = ""
-libreoffice-calc = ""
-lightcord = "ﭮ"
-VSCodium = ""
-gimp = ""
-java = ""
-wine = ""
-wineskin = ""
-winebottler = ""
-gnucash = "流"
-protonmail-bridge = ""
+Thunderbird = "󰇮"
+Spotify = "󰓇"
+keepassxc = "󱦃"
+libreoffice-startcenter = "󰈙"
+Soffice = "󰈙"
+libreoffice-writer = "󰷈"
+libreoffice-math = "󰃬"
+libreoffice-calc = "󰪚"
+lightcord = "󰙯"
+VSCodium = "󰅱"
+gimp = "󰉼"
+java = "󰬷"
+wine = "󰡶"
+wineskin = "󰊨"
+winebottler = "󰊧"
+protonmail-bridge = "󰒃"
 
 [options]
 no_icon_names = true
 
 [general]
-default_icon = ""
+default_icon = "󰽥"

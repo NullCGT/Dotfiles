@@ -104,7 +104,7 @@ MENUCOLOR="unholy water"=orange
 MENUCOLOR=" blessed .* \((being|wielded|weapon)"=cyan&underline
 MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=green&underline
 MENUCOLOR=" cursed .* \((being|wielded|weapon)"=orange&underline
-MENUCOLOR=" \((being|wielded|weapon)"=normal&underline
+MENUCOLOR=" \((being|wielded|weapon)"=white&underline
 # Quest stuff
 MENUCOLOR="named real"=brightblue&bold
 MENUCOLOR="bell of opening"=brightblue&bold
@@ -200,7 +200,7 @@ MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
 
 ######## Developer Settings ########
-#OPTIONS=playmode:debug
+OPTIONS=playmode:debug
 #OPTIONS=sanity_check
 #OPTIONS=nopet
-#BIND=^q:wizmakemap 
+BIND=^q:wizmakemap 

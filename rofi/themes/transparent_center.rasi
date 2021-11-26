@@ -2,31 +2,31 @@
  * By Kestrel Gregorich-Trevor */
 * {
     // Basic Properties
-    background-color: #011627;
-    text-color: #acb4c2;
-    show-icons: true;
+    background-color: #c8000000;
+    text-color: #f41475;
+    show-icons: false;
     sort: true;
     sidebar-mode: true;
 }
 window {
-    height: 100%;
-    width: 20%;
+    height: 50%;
+    width: 50%;
     padding: 5;
     xoffset: 5;
     yoffset: 5;
-    location: east;
-    anchor: east;
+    //location: east;
+    //anchor: east;
 }
 entry {
     expand: true;
     width: 10%;
 }
 element {
-    padding: 10;
+    padding: 5;
 }
 element selected {
     xoffset: 5;
-    background-color: #82aaff;
-    text-color: #011627;
+    background-color: #f41475;
+    text-color: #ffffff;
 }
 /* vim:ft=css

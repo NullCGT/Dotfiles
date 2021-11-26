@@ -4,7 +4,7 @@ This repository contains my personal dotfiles. Feel free to copy and modify them
 I maintain this repository with the help of the [dotbot](https://github.com/anishathalye/dotbot) utility. Please check it out.
 
 ## Icons
-I am currently using Icomoon-Free.
+I am currently using [Material Design Icons](https://materialdesignicons.com/).
 
 ## Color Scheme
 I am currently using a slightly modified version of [blood-moon](https://github.com/dguo/blood-moon).
@@ -20,6 +20,9 @@ Run install.sh. For configuration information, see [dotbot](https://github.com/a
 * [Polybar](https://github.com/polybar/polybar)
     * [Polybar Spotify Controls](https://github.com/dietervanhoof/polybar-spotify-controls)
 * [i3](https://github.com/i3/i3)
+
+### Text Editing
+* [NeoVim](https://neovim.io/)
 
 ### Terminal
 * [Alacritty](https://github.com/alacritty/alacritty)

@@ -45,9 +45,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 16
+    y: 16
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -72,7 +72,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  startup_mode: Fullscreen
 
   # Window title
   title: Alacritty
@@ -125,41 +125,70 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Nightfly)
-colors:
+#colors:
    # Default colors
-  primary:
-     background: '#011627'
-     foreground: '#acb4c2'
+   #primary:
+   #background: '#011627'
+   #foreground: '#acb4c2'
 
-  cursor:
-    text: '#fafafa'
-    cursor: '#9ca1aa'
+    #cursor:
+    #text: '#fafafa'
+    #cursor: '#9ca1aa'
 
-  selection:
-    text: '#080808'
-    background: '#b2ceee'
+    #selection:
+    #text: '#080808'
+    #background: '#b2ceee'
 
    # Normal colors
-  normal:
-    black:   '#1d3b53'
-    red:     '#fc514e'
-    green:   '#a1cd5e'
-    yellow:  '#e3d18a'
-    blue:    '#82aaff'
-    magenta: '#c792ea'
-    cyan:    '#7fdbca'
-    white:   '#a1aab8'
+   #normal:
+   #black:   '#1d3b53'
+   #red:     '#fc514e'
+   #green:   '#a1cd5e'
+   #yellow:  '#e3d18a'
+   #blue:    '#82aaff'
+   #magenta: '#c792ea'
+   #cyan:    '#7fdbca'
+   #white:   '#a1aab8'
 
    # Bright colors
+   #bright:
+   #black:   '#7c8f8f'
+   #red:     '#ff5874'
+   #green:   '#21c7a8'
+   #yellow:  '#ecc48d'
+   #blue:    '#82aaff'
+   #magenta: '#ae81ff'
+   #cyan:    '#7fdbca'
+   #white:   '#d6deeb'
+
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#C5C8C6'
+
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#AA0000'
+    green:   '#00AA00'
+    yellow:  '#AA5500'
+    blue:    '#0000AA'
+    magenta: '#AA00AA'
+    cyan:    '#00AAAA'
+    white:   '#FFFFFF'
+
+  # Bright colors
   bright:
-    black:   '#7c8f8f'
-    red:     '#ff5874'
-    green:   '#21c7a8'
-    yellow:  '#ecc48d'
-    blue:    '#82aaff'
-    magenta: '#ae81ff'
-    cyan:    '#7fdbca'
-    white:   '#d6deeb'
+    black:   '0x253b5b'
+    red:     '#FF5555'
+    green:   '#55FF55'
+    yellow:  '#FFFF55'
+    blue:    '#5555FF'
+    magenta: '#AA00AA'
+    cyan:    '#00AAAA'
+    white:   '#FFFFFF'
+
 
 #
 # Bell
@@ -207,7 +236,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+background_opacity: 0.75
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -259,7 +288,7 @@ cursor:
   thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
@@ -285,7 +314,7 @@ cursor:
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -295,7 +324,7 @@ cursor:
   #triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: true
 
   #url:
     # URL launcher
