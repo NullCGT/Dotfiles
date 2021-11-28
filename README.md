@@ -38,3 +38,4 @@ Run install.sh. For configuration information, see [dotbot](https://github.com/a
 * [Rofi](https://github.com/davatorium/rofi)
 * [Neofetch](https://github.com/dylanaraps/neofetch)
 * [Htop](https://github.com/htop-dev/htop/)
+* [i3wsr](https://github.com/roosta/i3wsr)

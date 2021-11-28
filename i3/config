@@ -28,7 +28,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # exec --no-startup-id nm-applet
 
 # Rename containers based on their contents using i3wsr.
-exec_always --no-startup-id $HOME/.cargo/bin/i3wsr --config ~/.config/i3/i3wsr.toml
+exec_always --no-startup-id /usr/bin/i3wsr --config ~/.config/i3/i3wsr.toml
 
 # Start up the spotify listener for polybar
 exec_always --no-startup-id spotify-listener
@@ -203,8 +203,8 @@ default_border pixel 1
 default_floating_border pixel 1
 new_window 1pixel
 
-# Restore wallpaper using nitrogen
-exec --no-startup-id nitrogen --restore
+# Restore wallpaper using feh
+exec --no-startup-id ~/.fehbg & 
 # Bootstrap polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Restore theming with wal

@@ -38,7 +38,7 @@ font-2 = Material Design Icons:style=Regular;size=12;0
 
 modules-center = spotify previous playpause next
 modules-left = i3
-modules-right = pulseaudio wlan eth date battery powermenu
+modules-right = backlight pulseaudio wlan eth date battery powermenu
 
 [module/title]
 type=internal/xwindow
@@ -127,31 +127,27 @@ label-urgent-padding = 2
 ; label-separator = |
 
 
-[module/brightnessctl]
-type = internal/brightnessctl
+[module/backlight]
+type = internal/backlight
+card = amdgpu_bl0
 
 format = <label> <bar>
-label = BL
+label = 󰃞
 
 bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator = 󰃠
+bar-indicator-foreground = ${colors.foreground} 
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
-inherit = module/brightnessctl
-type = internal/backlight
-card = intel_backlight
-
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -169,7 +165,7 @@ ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = enx28ee52049cd8
+interface = enp3s0
 interval = 3.0
 
 format-connected-prefix = "󰈁 "
@@ -220,7 +216,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = AC
 full-at = 98
 

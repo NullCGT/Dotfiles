@@ -4,7 +4,7 @@
     // Basic Properties
     background-color: #c8000000;
     text-color: #f41475;
-    show-icons: false;
+    show-icons: true;
     sort: true;
     sidebar-mode: true;
 }
@@ -14,8 +14,6 @@ window {
     padding: 5;
     xoffset: 5;
     yoffset: 5;
-    //location: east;
-    //anchor: east;
 }
 entry {
     expand: true;
@@ -26,7 +24,6 @@ element {
 }
 element selected {
     xoffset: 5;
-    background-color: #f41475;
-    text-color: #ffffff;
+    background-color: #ffffff;
 }
 /* vim:ft=css
