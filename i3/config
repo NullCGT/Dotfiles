@@ -40,8 +40,8 @@ exec_always --no-startup-id "picom --experimental-backends --config ~/.config/pi
 bindsym Print exec flameshot gui
 
 # Screen brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set +5% -q
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- -q
+bindsym XF86MonBrightnessUp exec brightnessctl --device=amdgpu_bl1 set +5% -q
+bindsym XF86MonBrightnessDown exec brightnessctl --device=amdgpu_bl1 set 5%- -q
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
