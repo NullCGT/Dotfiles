@@ -129,7 +129,7 @@ label-urgent-padding = 2
 
 [module/backlight]
 type = internal/backlight
-card = amdgpu_bl0
+card = amdgpu_bl1
 
 format = <label> <bar>
 label = 󰃞
@@ -169,7 +169,7 @@ interface = enp3s0
 interval = 3.0
 
 format-connected-prefix = "󰈁 "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected =

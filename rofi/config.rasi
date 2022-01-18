@@ -1,10 +1,10 @@
 configuration {
-	terminal: "alacritty";
+	terminal: "/usr/bin/alacritty";
 	sort: true;
 	combi-modi: "window,run,ssh,file-browser";
 	hide-scrollbar: false;
 	fake-transparency: true;
 	scrollbar-width: 8;
 	show-icons: true;
-	theme: "transparent_center";
 }
+@theme "transparent_center"
