@@ -307,6 +307,7 @@ OPTIONS=hilite_status:hitpoints/100%/white
 OPTIONS=hilite_status:hitpoints/<100%/brightgreen
 OPTIONS=hilite_status:hitpoints/<80%/green
 OPTIONS=hilite_status:hitpoints/<60%/yellow
+OPTIONS=hilite_status:hitpoints/<50%/orange
 OPTIONS=hilite_status:hitpoints/<40%/red
 OPTIONS=hilite_status:hitpoints/<20%/red&bold
 OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
@@ -316,9 +317,11 @@ OPTIONS=hilite_status:power/100%/white
 OPTIONS=hilite_status:power/<100%/brightgreen
 OPTIONS=hilite_status:power/<80%/green
 OPTIONS=hilite_status:power/<60%/yellow
+OPTIONS=hilite_status:power/<50%/orange
 OPTIONS=hilite_status:power/<40%/red
 OPTIONS=hilite_status:power/<20%/red&bold
 OPTIONS=hilite_status:power-max/up/green&bold/down/red&bold
+
 ########## Armor Class ############
 OPTIONS=hilite_status:armor-class/always/cyan/up/red&bold/down/green&bold
 OPTIONS=hilite_status:armor-class/<0/brightcyan
@@ -339,7 +342,12 @@ OPTIONS=hilite_status:experience/up/white&bold/down/gray&bold
 OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red/satiated/yellow
 
 ########### Troubles ##############
-OPTIONS=hilite_status:condition/major_troubles/red/minor_troubles/yellow//movement/cyan
+OPTIONS=hilite_status:condition/slime/brightgreen
+OPTIONS=hilite_status:condition/stone/white
+OPTIONS=hilite_status:condition/strngl/blue
+OPTIONS=hilite_status:condition/foodpois/red
+OPTIONS=hilite_status:condition/termill/green
+OPTIONS=hilite_status:condition/minor_troubles/yellow/movement/cyan
 
 ########### Alignment #############
 OPTIONS=hilite_status:alignment/changed/brightmagenta&bold/chaotic/red/lawful/white/neutral/gray
@@ -352,8 +360,8 @@ OPTIONS=hilite_status:characteristics/up/brightgreen&bold/down/red&bold
 OPTIONS=hilite_status:characteristics/>18/brightcyan
 OPTIONS=hilite_status:characteristics/=18/brightblue
 OPTIONS=hilite_status:characteristics/<18/green
-OPTIONS=hilite_status:characteristics/<14/brown
-OPTIONS=hilite_status:characteristics/<11/gray
+OPTIONS=hilite_status:characteristics/<14/gray
+OPTIONS=hilite_status:characteristics/<11/yellow
 OPTIONS=hilite_status:characteristics/<=8/orange
 OPTIONS=hilite_status:characteristics/<=6/red
 
