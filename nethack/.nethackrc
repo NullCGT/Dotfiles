@@ -160,7 +160,7 @@ OPTIONS=mouse_support
 ####################################
 # These options are generally only useful when debugging the game.
 # Enable debug (wizard) mode.
-OPTIONS=playmode:debug
+#OPTIONS=playmode:debug
 # Enable sanity checks.
 #OPTIONS=sanity_check
 # Bind the command to regenerate a map to a key.
