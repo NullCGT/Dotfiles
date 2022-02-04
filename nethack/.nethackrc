@@ -1,14 +1,12 @@
+###########################################
 ####### AntiGulp's NetHack RC File ########
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
+###########################################
 
-#SOUNDDIR=/home/kestrel/Workspace/NetHack/sounds/default
-#SOUND=MESG "This door is locked" "lock.wav" 100
-#SOUND=MESG "The door opens" "open.wav" 100
-#SOUND=MESG "\$ - .* gold pieces" "coins.wav" 100
-#SOUND=MESG ". - a scroll" "paper.wav" 100
-
+#################################
 ######## Personalization ########
+#################################
 # Options pertaining to the personalization of your character or game.
 # The name of your character.
 OPTIONS=name:Antigulp
@@ -28,26 +26,18 @@ OPTIONS=fruit:pumpkin muffin
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
-####### Challenges #######
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
-
-####### Verbose ######
-# Disabling verbose will silence many extraneous messages. Useful in the 
-# Plane of Fire.
-OPTIONS=verbose
-
-####### Numpad #######
+########################
+####### Controls #######
+########################
 # Method of controlling the character.
 # Vikeys
 OPTIONS=number_pad:0
 # Number Pad
 #OPTIONS=number_pad:1
 
+########################
 ####### Gameplay #######
+########################
 # Miscelaneous gampelay options.
 # Potentially dangerous actions that should require explicit confirmation.
 OPTIONS=paranoid_confirm:quit pray wand-break Were-change
@@ -58,44 +48,45 @@ OPTIONS=autodig
 # Automatically open doors when moving into them.
 OPTIONS=autoopen
 
+############################
 ####### Autocomplete #######
+############################
 # Extended commands to autocomplete.
 # Autocomplete the travel command, since it is used often.
 AUTOCOMPLETE=travel
 # Autocomplete the twoweapon command, since it is used often.
 AUTOCOMPLETE=twoweapon
 
-######## Autopickup #######
-# Autopickup options.
-# Enable autopickup by default.
-OPTIONS=autopickup
-# Define which item symbols to automatically pick up.
-OPTIONS=pickup_types:?$/
-# Automatically pick up thrown or fired projectiles.
-OPTIONS=pickup_thrown
-
-######## News and Mail ########
-# Options relating to news and mail.
+###############################
+######## Connectivity #########
+###############################
+# Options relating to online functionality.
 # Enable news functionality.
 OPTIONS=news
 # Allow other users to send you mail if you are on a public server.
 OPTIONS=mail
+# Enable bones file loading.
+OPTIONS=bones
 
+###########################
 ####### High Scores #######
+###########################
 # High score options.
 # Format the high score list.
 OPTIONS=scores:10t 2a o
 
+#########################
 ######## Display ########
+#########################
 # Display options.
+# The symset to use when displaying characters.
+OPTIONS=symset:DECgraphics
 # Display boulders with the zero symbol for increased visibility.
 SYMBOLS=S_boulder:0
 # Display golems with the seven symbol for increased visibility.
 SYMBOLS=S_golem:7
 # Display ghosts with the eight symbol for increased visibility.
 SYMBOLS=S_ghost:8
-# The symset to use when displaying characters.
-OPTIONS=symset:DECgraphics
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.
@@ -108,7 +99,9 @@ OPTIONS=use_darkgray
 # curses interface must be disabled.
 OPTIONS=!vt_tiledata
 
+######################
 ######## GUI #########
+######################
 # GUI Options
 # The type of GUI to use, such as curses or tty.
 OPTIONS=windowtype:curses
@@ -134,7 +127,9 @@ OPTIONS=!implicit_uncursed
 # Show the top ten scores.
 OPTIONS=toptenwin
 
+#####################################
 ######## Curses-Specific GUI ########
+#####################################
 # Options for the curses interface.
 # Display the inventory onscreen at all times.
 OPTIONS=perm_invent
@@ -151,16 +146,85 @@ OPTIONS=clicklook
 # Enable mouse support.
 OPTIONS=mouse_support
 
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+
+####################################
+######## Developer Settings ########
+####################################
+# These options are generally only useful when debugging the game.
+# Enable debug (wizard) mode.
+OPTIONS=playmode:debug
+# Enable sanity checks.
+#OPTIONS=sanity_check
+# Bind the command to regenerate a map to a key.
+#BIND=^q:wizmakemap 
+# Define the path to the wizkit file.
+#WIZKIT=.wizkit
+
+###########################
+######## Autopickup #######
+###########################
+# Autopickup options.
+# Enable autopickup by default.
+OPTIONS=autopickup
+# Define which item symbols to automatically pick up.
+OPTIONS=pickup_types:$?!/="
+# Automatically pick up thrown or fired projectiles.
+OPTIONS=pickup_thrown
+# Avoid picking up things that will burden us.
+OPTIONS=pickup_burden:unencumbered
+
+###########################
+## Autopickup Exceptions ##
+###########################
+# Thanks NetHack wiki!
+# Only pick up the named Amulet of Yendor
+AUTOPICKUP_EXCEPTION=">Amulet of Yendor"
+AUTOPICKUP_EXCEPTION="<Amulet of Yendor named real"
+AUTOPICKUP_EXCEPTION=">scroll .* scare monster"
+
+# Avoid wands called empty and nothing
+AUTOPICKUP_EXCEPTION="> named empty"
+AUTOPICKUP_EXCEPTION="> nothing"
+
+# Avoid things that are probably bad
+AUTOPICKUP_EXCEPTION="> called bad"
+AUTOPICKUP_EXCEPTION="> cancellation"
+
+# We do not have autopickup for gems enabled by default, but just in case,
+# make sure we never, EVER pick up a loadstone.
+AUTOPICKUP_EXCEPTION="> loadstone"
+
+# Certain items should always be picked up. This list notably does NOT
+# contain wands of wishing. When we see a wand of wishing, we need to
+# KNOW that it is there, and therefore set a msgtype rather than an
+# autopickup exception.
+AUTOPICKUP_EXCEPTION="<wand of death"
+AUTOPICKUP_EXCEPTION="<wand of polymorph"
+AUTOPICKUP_EXCEPTION="<magic lamp"
+
+
+#############################
 ######## Menu Colors ########
+#############################
 # Options relating to menu colors.
 OPTIONS=color, menucolors
-# BUC
-MENUCOLOR=" blessed "=brightcyan
-MENUCOLOR=" uncursed "=brightgreen
+
+########### BUC #############
+MENUCOLOR=" blessed "=cyan
+MENUCOLOR=" uncursed "=green
 MENUCOLOR=" cursed "=orange
 MENUCOLOR="holy water"=brightcyan
 MENUCOLOR="unholy water"=orange
-# Colored Items
+
+###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
 MENUCOLOR=" red (gem|dragon|glass)"=red
 MENUCOLOR=" blue (gem|dragon|glass)"=brightblue
@@ -195,37 +259,50 @@ MENUCOLOR="obsidian stone"=black
 MENUCOLOR="agate stone"=orange
 MENUCOLOR="ruby$"=red
 MENUCOLOR="emerald$"=green
-# Equipment
+
+######## Equipment ##########
 MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
-MENUCOLOR=" blessed .* \((being|wielded|weapon)"=cyan&underline
-MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=green&underline
+MENUCOLOR=" blessed .* \((being|wielded|weapon)"=brightcyan&underline
+MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=brightgreen&underline
 MENUCOLOR=" cursed .* \((being|wielded|weapon)"=red&underline
-# Quest stuff
-MENUCOLOR="named real"=brightblue&bold
+MENUCOLOR="\(lit\)"=yellow&underline
+
+####### Quest Items ########
 MENUCOLOR="bell of opening"=brightblue&bold
 MENUCOLOR="silver bell"=brightblue&bold
 MENUCOLOR="Book of the Dead"=brightblue&bold
 MENUCOLOR="papyrus spellbook"=brightblue&bold
 MENUCOLOR="candelabrum"=brightblue&bold
-# Good Stuff
+
+######### Wishing ###########
 MENUCOLOR="wishing"=brightblue&bold
-# Bad Stuff
-MENUCOLOR="cheap plastic imitation"=orange
-MENUCOLOR="named fake"=orange
-MENUCOLOR="wand (of|called) cancellation"=brightmagenta&bold
+
+###### Amulet of Yendor #####
+MENUCOLOR="Amulet of Yendor named real"=brightblue&bold
+# Cast it into the fire! Destroy it!
+MENUCOLOR="cheap plastic imitation"=brightmagenta&bold
+
+###### Dangerous Items ######
+MENUCOLOR="wand (of|called) cancellation"=brightmagenta&underline
 MENUCOLOR="loadstone"=brightmagenta&underline
-MENUCOLOR="cockatrice corpse.*"=brightmagenta&underline
-# Forgotten Spell
-MENUCOLOR="[a-zA-Z] - [a-zA-Z ]+[ ]+[0-9]+\*[ ]+[a-z]+[ ]+[0-9]+%"=magenta
-# Skill Levels
-MENUCOLOR="(Basic|Skilled|Expert|Master|Grand Master)"=white
-# Money
+MENUCOLOR="c(hi|o)ckatrice corpse.*"=brightmagenta&underline
+
+########## Spells ###########
+MENUCOLOR="(gone)"=magenta
+
+########## Skills ###########
+MENUCOLOR="(Basic\ |Skilled|Expert|Master|Grand Master)"=white
+
+########### Money ###########
 MENUCOLOR="gold piece"=yellow
 
+###################################
 ######## Status Highlights ########
+###################################
 # Options relating to status highlighting.
 OPTIONS=statushilites:10
-# Hit Points
+
+########### Hit Points ############
 OPTIONS=hilite_status:hitpoints/100%/white
 OPTIONS=hilite_status:hitpoints/<100%/brightgreen
 OPTIONS=hilite_status:hitpoints/<80%/green
@@ -233,7 +310,8 @@ OPTIONS=hilite_status:hitpoints/<60%/yellow
 OPTIONS=hilite_status:hitpoints/<40%/red
 OPTIONS=hilite_status:hitpoints/<20%/red&bold
 OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
-# Power
+
+############ Power ################
 OPTIONS=hilite_status:power/100%/white
 OPTIONS=hilite_status:power/<100%/brightgreen
 OPTIONS=hilite_status:power/<80%/green
@@ -241,27 +319,35 @@ OPTIONS=hilite_status:power/<60%/yellow
 OPTIONS=hilite_status:power/<40%/red
 OPTIONS=hilite_status:power/<20%/red&bold
 OPTIONS=hilite_status:power-max/up/green&bold/down/red&bold
-# Armor Class
+########## Armor Class ############
 OPTIONS=hilite_status:armor-class/always/cyan/up/red&bold/down/green&bold
 OPTIONS=hilite_status:armor-class/<0/brightcyan
-# Dungeon Level
+
+######### Dungeon Level ###########
 OPTIONS=hilite_status:dungeon-level/always/brown/changed/orange
-# Encumberance
+
+######### Encumberance ############
 OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange/strained/orange/overtaxed/red/overloaded/red
-# Experience
+
+########## Experience #############
 OPTIONS=hilite_status:experience-level/up/green&bold/down/red&bold
 OPTIONS=hilite_status:experience-level/=14/brightmagenta&bold
 OPTIONS=hilite_status:experience-level/=30/green&bold
 OPTIONS=hilite_status:experience/up/white&bold/down/gray&bold
-# Hunger
+
+############ Hunger ###############
 OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red/satiated/yellow
-# Troubles
+
+########### Troubles ##############
 OPTIONS=hilite_status:condition/major_troubles/red/minor_troubles/yellow//movement/cyan
-# Alignment
+
+########### Alignment #############
 OPTIONS=hilite_status:alignment/changed/brightmagenta&bold/chaotic/red/lawful/white/neutral/gray
-# Gold
+
+############# Gold ################
 OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
-# Characteristics
+
+######### Characteristics #########
 OPTIONS=hilite_status:characteristics/up/brightgreen&bold/down/red&bold
 OPTIONS=hilite_status:characteristics/>18/brightcyan
 OPTIONS=hilite_status:characteristics/=18/brightblue
@@ -271,24 +357,36 @@ OPTIONS=hilite_status:characteristics/<11/gray
 OPTIONS=hilite_status:characteristics/<=8/orange
 OPTIONS=hilite_status:characteristics/<=6/red
 
+##########################
 ######## Messages ########
+##########################
 # Options relating to the display of messages.
+# Many of these are pulled from the NetHack wiki.
 # Annoying messages. These are hidden entirely.
 MSGTYPE=hide "You displaced *"
 MSGTYPE=hide "You swap places with *"
 MSGTYPE=norep "Your tentacles suck the .*"
 MSGTYPE=norep "You see here a *"
 MSGTYPE=norep "You see here an *"
+
 # Wresting the final charge from a wand is easy to miss.
 MSGTYPE=stop "You wrest .*"
+
 # The Vibrating Square is easy to miss.
 MSGTYPE=stop "You feel a strange vibration under your *."
 MSGTYPE=stop "You see a strange vibration under *."
 MSGTYPE=stop "You feel a strange vibration beneath you."
 MSGTYPE=stop "You find a vibrating square."
+
+# We *always* want to know if we step on certain powerful items.
+MSGTYPE=stop "You (see|feel) here .* wand (of|called) wishing*"
+MSGTYPE=stop "You (see|feel) here .* bag (of|called) holding*"
+MSGTYPE=stop "You (see|feel) here .* scroll (of|called) scare*"
+
 # Automatically stop when something hidden is found, in order to prevent wasted
 # turns while searching.
 MSGTYPE=stop "You find a hidden .*"
+
 # Delayed instadeaths are very dangerous, and skipping past them in the
 # message log often means certain death.
 MSGTYPE=stop "The .* (grabs|swings itself around) you!"
@@ -309,23 +407,16 @@ MSGTYPE=stop "Your consciousness is fading."
 MSGTYPE=stop "You feel deathly sick."
 MSGTYPE=stop "You feel much worse."
 MSGTYPE=stop "You feel even worse."
+
 # Potentially dangerous situations should stop the player as well.
 MSGTYPE=stop "You fail to cast the spell correctly."
 MSGTYPE=stop "You see here a c(hi|o)ckatrice corpse."
 MSGTYPE=stop "You are beginning to feel weak."
 MSGTYPE=stop "So thou thought thou couldst .*"
 MSGTYPE=stop "Double Trouble..."
+MSGTYPE=stop "(Demogorgon|Dispater|Yeenoghu|Geryon) appears *"
+
 # Stop the player if they receive a notification about having low hit points.
 MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
-
-######## Developer Settings ########
-# These options are generally only useful when debugging the game.
-# Enable debug (wizard) mode.
-#OPTIONS=playmode:debug
-# Enable sanity checks.
-#OPTIONS=sanity_check
-# Bind the command to regenerate a map to a key.
-#BIND=^q:wizmakemap 
-# Define the path to the wizkit file.
-#WIZKIT=.wizkit
+MSGTYPE=stop "(Wizard|Elf|Valkyrie) is about to die."
