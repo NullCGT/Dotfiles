@@ -42,71 +42,73 @@ set scrolloff=2
 " Plugin Management
 " ---------------------------------------------------------
 call plug#begin('~/.vim/plugged')
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'sbdchd/neoformat'
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
-Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'glepnir/dashboard-nvim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
-" Airline Settings
-let g:airline_powerline_fonts = 1
-let g:airline_symbols = {}
-let g:airline_theme = 'night_owl'
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.colnr = ' ㏇:'
-let g:airline_symbols.colnr = ' ℅:'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = ' ␊:'
-let g:airline_symbols.linenr = ' ␤:'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.whitespace = 'Ξ'
+" Lightline
+" ----------------------------------------------------------
+set laststatus=2
+let g:lightline = {
+			\ 'colorscheme': 'tokyonight',
+			\ }
+set noshowmode
 
-" Startify Management
-" ---------------------------------------------------------
-" Pixelart from https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text
-let g:startify_custom_header = [
-    \'          ▀████▀▄▄              ▄█ ',
-    \'            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ',
-    \'    ▄        █          ▀▀▀▀▄  ▄▀  ',
-    \'   ▄▀ ▀▄      ▀▄              ▀▄▀  ',
-    \'  ▄▀    █     █▀   ▄█▀▄      ▄█    ',
-    \'  ▀▄     ▀▄  █     ▀██▀     ██▄█      Welcome to NeoVim!',
-    \'   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ',
-    \'    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ',
-    \'   █   █  █      ▄▄           ▄▀   ',
-    \]
-let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   MRU']            },
-          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
-          \ ]
-let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
+" Dashboard
+" ----------------------------------------------------------
+let g:mapleader="\<Space>"
+let g:dashboard_default_executive = 'telescope'
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
+let g:dashboard_custom_header =[
+			\'⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿', 
+			\'⣿⣿⣯⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⠀⠀⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠁⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠋⢹',
+			\'⣿⣿⣿⣆⠀⠀⠀⠀⠈⠙⠟⠛⠛⠛⠋⠉⠉⠛⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠀⠀⠀⠀⠀⣼',
+			\'⣿⣿⣿⣿⣧⡀⣠⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿',
+			\'⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⣾⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣿⣿',
+			\'⣿⣿⣿⡟⢁⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⣿⣿⣿⣿⣿',
+			\'⣿⣿⡿⣴⣩⣿⠀⠀⠀⠀⠀⠀⠀⠀⢠⣏⣨⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣷⣄⠀⠀⠀⢀⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⠃⢿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣷⣤⡀⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⡆⠀⠀⠀⠀⠀⠠⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠐⣦⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣄⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⡏⠀⠀⠀⠀⢀⠀⡀⣀⣀⠀⢀⠄⠀⠀⠀⠀⠀⠹⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⠀⣻⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣄⠀⠀⠀⠀⠁⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⢿⣿⣿⡿⠋⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⡗⠂⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡿⠋⠀⣿⠟⠁⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠉⠀⠀⣼⣹⣶⣄⡰⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⣼⣿⡝⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣇⢀⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⢥⠀⠀⠀⡠⠊⠀⠀⠀⠀⠀⢀⣾⡿⠋⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣾⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠲⠖⠉⠀⠀⠀⠀⠀⠀⠀⠚⠉⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣿⣿⣿⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣿⠟⠁⠀⠈⠀⠀⢀⣀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣡⣴⣂⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠆⠀⠀⠀⠀⢀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣀⣤⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+			\'', 
+			\'                 Try your best!                    '
+			\]
 " Autocommands
 " ---------------------------------------------------------
 " Exit VIM if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+			\ quit | endif
 
 " Syntax and Colorscheme
 " ---------------------------------------------------------
@@ -114,22 +116,26 @@ syntax on
 set t_Co=256
 set background=dark
 set termguicolors
-colorscheme nightfly
-highlight Normal ctermbg=None guiBG=None
-highlight nonText ctermbg=None guiBG=None
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
+" Change the "hint" color to the "orange" color, and make the "error" color bright red
+let g:tokyonight_colors = {
+			\ 'hint': 'orange',
+			\ 'error': '#ff0000'
+			\ }
+colorscheme tokyonight
 " Shortcuts
 " ---------------------------------------------------------
 " NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 " Tab Navigation
-nnoremap th :tabnext<CR>
-nnoremap tl :tabprev<CR>
-nnoremap tn :tabnew<CR>
-nnoremap td :tabclose<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprev<CR>
+nnoremap <C-n> :tabnew<CR>
+nnoremap <C-q> :tabclose<CR>
 " Insert Mode Escaping
 imap jk <Esc>
 imap kj <Esc>
@@ -137,3 +143,7 @@ imap kj <Esc>
 " Keys
 " ---------------------------------------------------------
 let mapleader=","
+
+" Security
+" ---------------------------------------------------------
+set secure

@@ -6,9 +6,6 @@ I maintain this repository with the help of the [dotbot](https://github.com/anis
 ## Icons
 I am currently using [Material Design Icons](https://materialdesignicons.com/).
 
-## Color Scheme
-I am currently using a slightly modified version of [blood-moon](https://github.com/dguo/blood-moon).
-
 ## Installation
 Run install.sh. For configuration information, see [dotbot](https://github.com/anishathalye/dotbot).
 

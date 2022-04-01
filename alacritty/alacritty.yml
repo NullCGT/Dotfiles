@@ -77,6 +77,9 @@ window:
   # Window title
   title: Alacritty
 
+  # Opacity
+  background_opacity: 85
+
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
 
@@ -124,34 +127,39 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '#000000'
-    foreground: '#C5C8C6'
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#AA0000'
-    green:   '#00AA00'
-    yellow:  '#AA5500'
-    blue:    '#0000AA'
-    magenta: '#AA00AA'
-    cyan:    '#00AAAA'
-    white:   '#FFFFFF'
+    black:   '0x15161E'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black:   '0x253b5b'
-    red:     '#FF5555'
-    green:   '#55FF55'
-    yellow:  '#FFFF55'
-    blue:    '#5555FF'
-    magenta: '#F41475'
-    cyan:    '#00AAAA'
-    white:   '#FFFFFF'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
 
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
 
 #
 # Bell
@@ -194,12 +202,6 @@ bell:
   #     args: ["Hello, World!"]
   #
   #command: None
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.85
 
 #selection:
   # This string contains all characters that are used as separators for

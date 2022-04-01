@@ -1,7 +1,7 @@
 [colors]
-background = #00000000
+background = #1a1b26
 background-alt = #444
-foreground = #f41475
+foreground = #a9b1d6
 foreground-alt = #555
 primary = ${xrdb:color1:#ffb52a}
 secondary = ${xrdb:color2:#e60053}

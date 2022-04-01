@@ -135,7 +135,7 @@ OPTIONS=runmode:teleport
 ######################
 # GUI Options
 # The type of GUI to use, such as curses or tty.
-OPTIONS=windowtype:curses
+OPTIONS=windowtype:tty
 # Show experience on the status line.
 OPTIONS=showexp
 # Show the score on the status line.

@@ -57,6 +57,15 @@ AUTOCOMPLETE=travel
 # Autocomplete the twoweapon command, since it is used often.
 AUTOCOMPLETE=twoweapon
 
+###########################
+######## Keybinds #########
+###########################
+# Commands to bind to specific keys.
+# Bind rub to ~
+BIND=~:rub
+# Bind dip to !
+BIND=!:dip
+
 ###############################
 ######## Connectivity #########
 ###############################
@@ -98,6 +107,8 @@ OPTIONS=use_darkgray
 # Tile data is disabled. To enable tile data, this must be toggled, and the
 # curses interface must be disabled.
 OPTIONS=!vt_tiledata
+# Do not repeatedly update the display when travelling or running.
+OPTIONS=runmode:teleport
 
 ######################
 ######## GUI #########
@@ -236,11 +247,9 @@ MENUCOLOR=" yellowish brown (gem|glass)"=brown
 MENUCOLOR=" yellow (gem|dragon|glass)"=yellow
 MENUCOLOR=" violet (gem|dragon|glass)"=magenta
 MENUCOLOR="dilithium crystal"=white
-MENUCOLOR="diamond"=white
 MENUCOLOR="rubies"=red
 MENUCOLOR="emeralds"=green
 MENUCOLOR="jacinth stone"=red
-MENUCOLOR="sapphire"=blue
 MENUCOLOR="black opal"=black
 MENUCOLOR="turquoise stone"=blue
 MENUCOLOR="citrine stone"=yellow
@@ -248,9 +257,7 @@ MENUCOLOR="aquamarine stone"=green
 MENUCOLOR="amber stone"=brown
 MENUCOLOR="topaz stone"=brown
 MENUCOLOR="jet stone"=black
-MENUCOLOR="opal"=white
 MENUCOLOR="chrysoberyl stone"=yellow
-MENUCOLOR="garnet"=red
 MENUCOLOR="amethyst stone"=magenta
 MENUCOLOR="jasper stone"=red
 MENUCOLOR="fluorite stone"=blue
@@ -259,6 +266,10 @@ MENUCOLOR="obsidian stone"=black
 MENUCOLOR="agate stone"=orange
 MENUCOLOR="ruby$"=red
 MENUCOLOR="emerald$"=green
+MENUCOLOR="diamond$"=white
+MENUCOLOR="sapphire$"=blue
+MENUCOLOR="garnet$"=red
+MENUCOLOR="opal$"=white
 
 ######## Equipment ##########
 MENUCOLOR=" \((being|wielded|weapon)"=gray&underline

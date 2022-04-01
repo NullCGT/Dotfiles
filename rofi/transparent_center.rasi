@@ -3,7 +3,7 @@
 * {
     // Basic Properties
     background-color: #c8000000;
-    text-color: #f41475;
+    text-color: #a9b1d6;
     show-icons: true;
     sort: true;
     sidebar-mode: true;
@@ -24,6 +24,6 @@ element {
 }
 element selected {
     xoffset: 5;
-    background-color: #ffffff;
+    background-color: #24283b;
 }
 /* vim:ft=css
