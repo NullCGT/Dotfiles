@@ -126,6 +126,7 @@ let g:tokyonight_colors = {
 			\ 'error': '#ff0000'
 			\ }
 colorscheme tokyonight
+hi Normal guibg=NONE ctermbg=NONE
 " Shortcuts
 " ---------------------------------------------------------
 " NERDTree

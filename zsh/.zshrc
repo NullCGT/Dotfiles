@@ -107,28 +107,36 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Configuration file shortcuts
-alias zshconfig="$EDITOR $HOME/.zshrc"
-alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh"
-alias alacrittyconfig="$EDITOR $HOME/.config/alacritty/alacritty.yml"
-alias i3config="$EDITOR $HOME/.config/i3/config"
+# Text Editing
+alias vi="nvim"
+# Utilities
+alias diff="colordiff"
+alias grep="grep --color=auto"
+alias c="clear"
 # Python
 alias python="python3"
 alias pip="pip3"
-alias pywal=wal
-# i3lock on suspend wakeup
-alias i3lock="i3lock && echo mem > /sys/power/state"
-# Update Wallpaper
-function update_wallpaper(){
-    nitrogen --set-auto $1
-    sed -i "s#file=.*#file=$1#" "$HOME/.config/nitrogen/bg-saved.cfg"
-    wal -i "$1" &
-}
-# Finally, update the wallpaper color scheme on startup.
-#(cat ~/.cache/wal/sequences &)
+# Package management
+alias yeet="yay -R"
+# ssh with alacritty
+alias ssh="TERM=xterm-256color ssh"
+# Better ls
+alias ls="ls -lah --color"
+# Untar
+alias untar="tar -zxvf"
+# Update wallpaper
+alias update_wallpaper="feh --bg-fill"
+# Better git
+alias glog="git log --graph --pretty=full"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
+
+PATH="/home/kestrel/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/kestrel/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/kestrel/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/kestrel/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/kestrel/perl5"; export PERL_MM_OPT;

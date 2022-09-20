@@ -2,7 +2,7 @@
  * By Kestrel Gregorich-Trevor */
 * {
     // Basic Properties
-    background-color: #c8000000;
+    background-color: #1a1b26;
     text-color: #a9b1d6;
     show-icons: true;
     sort: true;
