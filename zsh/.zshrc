@@ -81,7 +81,7 @@ export UPDATE_ZSH_DAYS=3
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cp command-not-found copyfile last-working-dir pip zsh-syntax-highlighting)
+plugins=(git cp command-not-found copyfile last-working-dir pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,9 +113,6 @@ alias vi="nvim"
 alias diff="colordiff"
 alias grep="grep --color=auto"
 alias c="clear"
-# Python
-alias python="python3"
-alias pip="pip3"
 # Package management
 alias yeet="yay -R"
 # ssh with alacritty
