@@ -56,15 +56,15 @@ o.smartcase = true
 o.history = 50
 
 -- Text Editing
-o.spell = false
 o.scrolloff = 2
 wo.colorcolumn = '80'
-
+vim.opt.spelllang = 'en_us'
 
 -- Syntax and Colorscheme
 o.t_Co=256
 o.background = 'dark'
 o.termguicolors = true
+vim.cmd("colorscheme dracula")
 
 -- Security
 o.secure=true

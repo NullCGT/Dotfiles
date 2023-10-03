@@ -14,7 +14,7 @@ set $mod Mod1
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:MesloLGS NF
+font pango:DejaVuSansM Nerd Font 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -34,8 +34,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id dunst
 
 # Start picom
-exec_always --no-startup-id "picom --experimental-backends --config ~/.config/picom/picom.conf"
-
+exec_always --no-startup-id "picom"
 # Screenshot with flameshot
 bindsym Print exec flameshot gui
 
@@ -202,11 +201,10 @@ bindsym $mod+r mode "resize"
 #}
 
 # Window borders
-default_border pixel 1
-default_floating_border pixel 1
-new_window 1pixel
+default_border pixel 0
+default_floating_border pixel 0
 # Window borders (deprecated?)
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # Restore wallpaper using feh
 exec --no-startup-id ~/.fehbg & 

@@ -109,6 +109,7 @@ fi
 #
 # Text Editing
 alias vi="nvim"
+alias suedit="sudo edit"
 # Utilities
 alias diff="colordiff"
 alias grep="grep --color=auto"
@@ -118,13 +119,18 @@ alias yeet="yay -R"
 # ssh with alacritty
 alias ssh="TERM=xterm-256color ssh"
 # Better ls
-alias ls="ls -lah --color"
+alias ls="ls -lah --color=auto"
 # Untar
 alias untar="tar -zxvf"
 # Update wallpaper
 alias update_wallpaper="feh --bg-fill"
 # Better git
 alias glog="git log --graph --pretty=full"
+# Lsd Preferences
+alias lsd="lsd -l --hyperlink=auto -Z --all"
+
+# Pywal Persistency
+(cat ~/.cache/wal/sequences &)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

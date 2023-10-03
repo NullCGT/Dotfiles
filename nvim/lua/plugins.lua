@@ -1,5 +1,7 @@
+-- Add packer.
 vim.cmd [[packadd packer.nvim]]
 
+-- Automatically recompile plugins with packer when this file is changed.
 vim.cmd([[
     augroup packer_user_config
         autocmd!
@@ -8,64 +10,55 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    -- Lightline
-    use 'itchyny/lightline.vim'
-    use 'shinchu/lightline-gruvbox.vim'
-    -- Telescope
+    -- Packer (Plugin Management)
+    use { 'wbthomason/packer.nvim' }
+
+    -- Autopairs
+    use { 'cohama/lexima.vim' } 
+
+    -- Dracula (Color Scheme)
+    use { 'Mofiqul/dracula.nvim' }
+
+    -- Lualine (Status Bar)
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = {
+            'kyazdani42/nvim-web-devicons', opt = true 
+        },
+        require('lualine').setup {
+            options = {
+                icons_enabled = true,
+                theme = 'auto',
+                component_separators = '|',
+                section_separators = { left = '', right = ''},
+                -- section_separators = { left = '', right = '' },
+            }
+        }
+    }
+   
+    -- Telescope (Powerful Searching)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or 
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    -- Gitgutter
-    use 'airblade/vim-gitgutter'
-    -- Git blame
-    use 'f-person/git-blame.nvim'
-    -- Neoformat
+
+    -- Gitsigns-nvim (Git Signs)
+    use {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup {
+            }
+        end
+    }
+
+    -- Neoformat (Formatting Code)
     use 'sbdchd/neoformat'
-    -- Vim-Surround
-    use 'tpope/vim-surround'
-    -- Vim-Fugitive
+    
+    -- Vim-Fugitive (Git Command Wrapper)
     use 'tpope/vim-fugitive'
-    -- Goyo
-    use 'junegunn/goyo.vim'
-    -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-        config = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = { 'c', 'lua', 'regex', 'python', 'bash' },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false
-                }
-            })
-        end
-    }
-    -- Tokyonight color scheme
-    --use {
-    --    'folke/tokyonight.nvim', 
-    --    config = function()
-    --        require('tokyonight').setup({
-    --            style = 'night',
-    --            transparent = true,
-    --            sidebars = { 'qf', 'help', 'vista_kind', 'terminal', 'packer' }
-    --        })
-    --        vim.cmd[[colorscheme tokyonight]]
-    --        vim.g.lightline = { colorscheme = 'tokyonight' }
-    --    end
-    --}
-    use {
-        'ellisonleao/gruvbox.nvim',
-        config = function()
-            vim.cmd([[colorscheme gruvbox]])
-            vim.g.lightline = { colorscheme = 'gruvbox' }
-        end
-    }
-    -- Todo Comments
+
+    -- Todo Comments (Highlight and More)
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -74,14 +67,64 @@ return require('packer').startup(function(use)
             }
         end
     }
-    -- Shade
-    use 'sunjon/shade.nvim'
-    -- Startup
+
+    -- Whichkey (Key Popup)
     use {
-        "startup-nvim/startup.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        "folke/which-key.nvim",
         config = function()
-        require"startup".setup()
-    end}
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+            }
+        end
+    }
+
+    -- Colorizer (Colorize Color Strings)
+    use {
+       "NvChad/nvim-colorizer.lua",
+       config = function()
+           require("colorizer").setup {
+           }
+       end
+    }
+
+    -- True-zen (Zen Mode)
+    use({
+	"Pocco81/true-zen.nvim",
+	config = function()
+	    require("true-zen").setup {
+                modes = {
+                    ataraxis = {
+                        minimum_writing_area = {
+                            width = 80,
+                            height = 44
+                        }
+                    }
+                }
+	    }
+	end,
+    })
+
+    -- Bufferline (Pretty Buffer and Tabs)
+    use({
+        "akinsho/bufferline.nvim",
+        tag = "*",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("bufferline").setup{
+                options = {
+                    show_buffer_icons = true,
+                    numbers = "ordinal",
+                    indicator = {
+                        style = 'icon'
+                    },
+                    color_icons = true,
+                    show_buffer_icons = true,
+                    separator_style = "thick",
+                    mode = "tabs"
+                }
+            }
+        end
+    })
 end)
 

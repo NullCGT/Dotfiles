@@ -6,7 +6,7 @@
     text-color: #a9b1d6;
     show-icons: true;
     sort: true;
-    sidebar-mode: true;
+    sidebar-mode: false;
 }
 window {
     height: 50%;

@@ -25,6 +25,8 @@ OPTIONS=gender:female
 OPTIONS=fruit:pumpkin muffin
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
+# Comment out this line to get a tutorial
+OPTIONS=notutorial
 
 ########################
 ####### Controls #######
@@ -40,7 +42,7 @@ OPTIONS=number_pad:0
 ########################
 # Miscelaneous gampelay options.
 # Potentially dangerous actions that should require explicit confirmation.
-OPTIONS=paranoid_confirm:quit pray wand-break Were-change
+OPTIONS=paranoid_confirm:quit attack wand-break eat Were-change pray trap AutoAll swim Remove Confirm
 # Push unwielded weapon to the alternate weapon slot.
 OPTIONS=pushweapon
 # Automatically dig when moving against a wall while wielding a pickaxe.
@@ -88,14 +90,21 @@ OPTIONS=scores:10t 2a o
 ######## Display ########
 #########################
 # Display options.
-# The symset to use when displaying characters.
-OPTIONS=symset:DECgraphics
-# Display boulders with the zero symbol for increased visibility.
+# Custom symbol replacements.
 SYMBOLS=S_boulder:0
-# Display golems with the seven symbol for increased visibility.
 SYMBOLS=S_golem:7
-# Display ghosts with the eight symbol for increased visibility.
 SYMBOLS=S_ghost:8
+# The symset to use when displaying characters.
+OPTIONS=symset:Enhanced1
+OPTIONS=glyph:S_ice/U+02D1
+OPTIONS=glyph:S_corr/U+2591
+OPTIONS=glyph:S_litcorr/U+2592
+OPTIONS=glyph:S_throne/U+0409
+OPTIONS=glyph:S_bars/U+2980
+OPTIONS=glyph:S_magic_portal/U+238A
+OPTIONS=glyph:S_poisoncloud/U+00A7
+OPTIONS=glyph:S_cloud/U+00A7
+OPTIONS=glyph:S_stone/U+0023
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.
@@ -144,16 +153,16 @@ OPTIONS=toptenwin
 # Options for the curses interface.
 # Display the inventory onscreen at all times.
 OPTIONS=perm_invent
-# Display the status bar at the bottom of the screen.
-OPTIONS=align_status:left
-# Display the message log at the top of the screen.
+# Status bar location.
+OPTIONS=align_status:bottom
+# Message window location.
 OPTIONS=align_message:top
 # Highlight tame monsters by underlining them.
 OPTIONS=petattr:U
 # Show dialogue in popup menus.
 OPTIONS=popup_dialog
 # Allow the user to look at things by using the mouse.
-OPTIONS=clicklook
+# OPTIONS=clicklook
 # Enable mouse support.
 OPTIONS=mouse_support
 

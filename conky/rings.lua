@@ -24,14 +24,14 @@ function conky_main ()
     bg_width = 3
     -- Colors.
     -- Set background colors, 1, 0, 0, 1 = fully opaque red.
-    ring_bg_red = 0.5
-    ring_bg_green = 0.5
-    ring_bg_blue = 0.5
+    ring_bg_red = 0.18
+    ring_bg_green = 0.243
+    ring_bg_blue = 0.251
     ring_bg_alpha = 0.75
     -- Set indicator colors, 1, 1, 1, 1 = fully opaque white.
-    ring_in_red = 1
-    ring_in_green = 1
-    ring_in_blue = 1
+    ring_in_red = 0.85
+    ring_in_green = 0.87
+    ring_in_blue = 0.914
     ring_in_alpha = 1
     -- Indicator value settings.
     value = conky_parse ("${battery_percent BAT1}")
