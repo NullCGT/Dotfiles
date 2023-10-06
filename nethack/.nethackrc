@@ -11,18 +11,15 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-# Currently set to Catra, from She-Ra and the Princesses of Power.
-OPTIONS=catname:Catra
+OPTIONS=catname:Umuiyan
 # Default name for your starting pet if it is a dog.
-# Currently set to Huan, from the Silmarillion.
 OPTIONS=dogname:Huan
 # Default name to your starting pet if it is a horse.
-# Currently set to Windfola, the steed of Eowyn from the Lord of the Rings.
 OPTIONS=horsename:Windfola
 # Starting gender.
 OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:pumpkin muffin
+OPTIONS=fruit:honey cake 
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 # Comment out this line to get a tutorial
@@ -32,10 +29,7 @@ OPTIONS=notutorial
 ####### Controls #######
 ########################
 # Method of controlling the character.
-# Vikeys
 OPTIONS=number_pad:0
-# Number Pad
-#OPTIONS=number_pad:1
 
 ########################
 ####### Gameplay #######
@@ -96,6 +90,7 @@ SYMBOLS=S_golem:7
 SYMBOLS=S_ghost:8
 # The symset to use when displaying characters.
 OPTIONS=symset:Enhanced1
+OPTIONS=roguesymset:RogueEpyx
 OPTIONS=glyph:S_ice/U+02D1
 OPTIONS=glyph:S_corr/U+2591
 OPTIONS=glyph:S_litcorr/U+2592
@@ -146,6 +141,8 @@ OPTIONS=statuslines:3
 OPTIONS=!implicit_uncursed
 # Show the top ten scores.
 OPTIONS=toptenwin
+# Window port colors.
+OPTIONS=windowcolors:menu white/black message white/black status white/black
 
 #####################################
 ######## Curses-Specific GUI ########
@@ -184,7 +181,7 @@ OPTIONS=playmode:debug
 # Enable sanity checks.
 #OPTIONS=sanity_check
 # Bind the command to regenerate a map to a key.
-#BIND=^q:wizmakemap 
+BIND=^m:wizmakemap 
 # Define the path to the wizkit file.
 #WIZKIT=.wizkit
 
@@ -195,7 +192,7 @@ OPTIONS=playmode:debug
 # Enable autopickup by default.
 OPTIONS=autopickup
 # Define which item symbols to automatically pick up.
-OPTIONS=pickup_types:$?!/="
+OPTIONS=pickup_types:$?!/=*"
 # Automatically pick up thrown or fired projectiles.
 OPTIONS=pickup_thrown
 # Avoid picking up things that will burden us.
@@ -214,13 +211,12 @@ AUTOPICKUP_EXCEPTION=">scroll .* scare monster"
 AUTOPICKUP_EXCEPTION="> named empty"
 AUTOPICKUP_EXCEPTION="> nothing"
 
-# Avoid things that are probably bad
+# Avoid things that are dangerous or useless
 AUTOPICKUP_EXCEPTION="> called bad"
 AUTOPICKUP_EXCEPTION="> cancellation"
-
-# We do not have autopickup for gems enabled by default, but just in case,
-# make sure we never, EVER pick up a loadstone.
-AUTOPICKUP_EXCEPTION="> loadstone"
+AUTOPICKUP_EXCEPTION=">loadstone"
+AUTOPICKUP_EXCEPTION=">rock"
+AUTOPICKUP_EXCEPTION=">gray stone"
 
 # Certain items should always be picked up. This list notably does NOT
 # contain wands of wishing. When we see a wand of wishing, we need to
@@ -259,7 +255,6 @@ MENUCOLOR="dilithium crystal"=white
 MENUCOLOR="rubies"=red
 MENUCOLOR="emeralds"=green
 MENUCOLOR="jacinth stone"=red
-MENUCOLOR="black opal"=black
 MENUCOLOR="turquoise stone"=blue
 MENUCOLOR="citrine stone"=yellow
 MENUCOLOR="aquamarine stone"=green
@@ -279,6 +274,7 @@ MENUCOLOR="diamond$"=white
 MENUCOLOR="sapphire$"=blue
 MENUCOLOR="garnet$"=red
 MENUCOLOR="opal$"=white
+MENUCOLOR="black opal"=black
 
 ######## Equipment ##########
 MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
@@ -300,7 +296,7 @@ MENUCOLOR="wishing"=brightblue&bold
 ###### Amulet of Yendor #####
 MENUCOLOR="Amulet of Yendor named real"=brightblue&bold
 # Cast it into the fire! Destroy it!
-MENUCOLOR="cheap plastic imitation"=brightmagenta&bold
+MENUCOLOR="cheap plastic imitation"=brightmagenta&underline
 
 ###### Dangerous Items ######
 MENUCOLOR="wand (of|called) cancellation"=brightmagenta&underline
@@ -312,6 +308,10 @@ MENUCOLOR="(gone)"=magenta
 
 ########## Skills ###########
 MENUCOLOR="(Basic\ |Skilled|Expert|Master|Grand Master)"=white
+MENUCOLOR="Basic\ "=yellow
+MENUCOLOR="Skilled"=green
+MENUCOLOR="Expert"=brightgreen
+MENUCOLOR="(Master|Grand Master)"=cyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow
@@ -331,6 +331,7 @@ OPTIONS=hilite_status:hitpoints/<50%/orange
 OPTIONS=hilite_status:hitpoints/<40%/red
 OPTIONS=hilite_status:hitpoints/<20%/red&bold
 OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
+OPTIONS=hilite_status:hitpoints/criticalhp/magenta&inverse
 
 ############ Power ################
 OPTIONS=hilite_status:power/100%/white
@@ -376,11 +377,11 @@ OPTIONS=hilite_status:alignment/changed/brightmagenta&bold/chaotic/red/lawful/wh
 OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
 
 ######### Characteristics #########
-OPTIONS=hilite_status:characteristics/up/brightgreen&bold/down/red&bold
+OPTIONS=hilite_status:characteristics/up/brightcyan&bold/down/red&bold
 OPTIONS=hilite_status:characteristics/>18/brightcyan
-OPTIONS=hilite_status:characteristics/=18/brightblue
-OPTIONS=hilite_status:characteristics/<18/green
-OPTIONS=hilite_status:characteristics/<14/gray
+OPTIONS=hilite_status:characteristics/=18/cyan
+OPTIONS=hilite_status:characteristics/<18/brightgreen
+OPTIONS=hilite_status:characteristics/<14/green
 OPTIONS=hilite_status:characteristics/<11/yellow
 OPTIONS=hilite_status:characteristics/<=8/orange
 OPTIONS=hilite_status:characteristics/<=6/red
