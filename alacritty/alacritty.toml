@@ -1,0 +1,57 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutSine"
+color = "#000000"
+duration = 250
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+blink_interval = 750
+thickness = 0.15
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[cursor.vi_mode_style]
+blinking = "On"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 8.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "DejaVuSansM Nerd Font"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[window]
+decorations = "none"
+dynamic_title = true
+opacity = 0.9
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 16
+y = 16

@@ -73,9 +73,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = true
-
-; Strip numbers from workspaces
-strip-wsnumbers = true
+enable-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000

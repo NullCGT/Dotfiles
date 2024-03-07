@@ -61,10 +61,10 @@ wo.colorcolumn = '80'
 vim.opt.spelllang = 'en_us'
 
 -- Syntax and Colorscheme
-o.t_Co=256
+o.t_Co=16
 o.background = 'dark'
-o.termguicolors = true
-vim.cmd("colorscheme dracula")
+-- o.termguicolors = true
+-- vim.cmd("colorscheme dracula")
 
 -- Security
 o.secure=true

@@ -19,6 +19,12 @@ return require('packer').startup(function(use)
     -- Dracula (Color Scheme)
     use { 'Mofiqul/dracula.nvim' }
 
+    -- Pywal (Color Scheme)
+    use {
+        'AlphaTechnolog/pywal.nvim',
+        as = 'pywal',
+        require('pywal').setup{}
+    }
     -- Lualine (Status Bar)
     use {
         'nvim-lualine/lualine.nvim',
@@ -35,7 +41,12 @@ return require('packer').startup(function(use)
             }
         }
     }
-   
+    -- Markdown Preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
     -- Telescope (Powerful Searching)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',

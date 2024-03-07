@@ -90,7 +90,6 @@ SYMBOLS=S_golem:7
 SYMBOLS=S_ghost:8
 # The symset to use when displaying characters.
 OPTIONS=symset:Enhanced1
-OPTIONS=roguesymset:RogueEpyx
 OPTIONS=glyph:S_ice/U+02D1
 OPTIONS=glyph:S_corr/U+2591
 OPTIONS=glyph:S_litcorr/U+2592
@@ -100,6 +99,7 @@ OPTIONS=glyph:S_magic_portal/U+238A
 OPTIONS=glyph:S_poisoncloud/U+00A7
 OPTIONS=glyph:S_cloud/U+00A7
 OPTIONS=glyph:S_stone/U+0023
+OPTIONS=roguesymset:RogueEpyx
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.
