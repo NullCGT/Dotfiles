@@ -7,8 +7,4 @@ configuration {
 	scrollbar-width: 8;
 	show-icons: true;
 }
-//@theme "gruvbox-dark-soft"
-//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-//@theme "/usr/share/rofi/themes/dmenu.rasi"
-//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+@theme "/usr/share/rofi/themes/dmenu.rasi"

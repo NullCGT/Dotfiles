@@ -1,5 +1,6 @@
 # Add this path so we can execute pywal
 export PATH="$HOME/.local/bin:$PATH"
+# export PATH="$HOME/Downloads/WeiDU-Linux:$PATH"
 # Use MOST for our pager
 export PAGER="most"
 
@@ -35,11 +36,15 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 
 # History Navigation
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search 
+bindkey '\e[B' down-line-or-beginning-search
 
 # Prompt Customization
-PS1="%F{blue}%n%f@%F{magenta}%m%f %3~ %(?.%F{green}√.%F{red}✗)%f %# "
+PROMPT="%F{blue}%n%f@%F{magenta}%m%f %2~ %(?.%F{green}√.%F{red}✗)%f %# "
 
 # Aliases
 # Text Editing
@@ -49,6 +54,7 @@ alias suedit="sudo edit"
 alias diff="colordiff"
 alias grep="grep --color=auto"
 alias c="clear"
+alias rm="rm -I"
 # Package management
 alias yeet="yay -R"
 # ssh with alacritty
@@ -65,10 +71,12 @@ alias glog="git log --graph --pretty=full"
 alias lsd="lsd -l --hyperlink=auto -Z --all"
 
 # Pywal Persistency
-(cat ~/.cache/wal/sequences &)
+if [[ "$TERM" == "alacritty" ]] then
+    (cat ~/.cache/wal/sequences &)
+fi
 
-PATH="/home/kestrel/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/kestrel/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/kestrel/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/kestrel/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/kestrel/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
