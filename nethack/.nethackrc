@@ -34,7 +34,7 @@ OPTIONS=number_pad:0
 ########################
 ####### Gameplay #######
 ########################
-# Miscelaneous gampelay options.
+# Miscellaneous gameplay options.
 # Potentially dangerous actions that should require explicit confirmation.
 OPTIONS=paranoid_confirm:quit attack wand-break eat Were-change pray trap AutoAll swim Remove Confirm
 # Push unwielded weapon to the alternate weapon slot.
