@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: ['~/.config']
+
+- link:
+    ~/.nethackrc: nethack/.nethackrc
+    ~/.crecellehackrc: crecellehack/.crecellehackrc
+    ~/.zshrc: zsh/.zshrc
+    ~/.config/alacritty: alacritty
+    ~/.config/nvim: nvim
+    ~/.config/polybar: polybar
+    ~/.config/ranger: ranger
+    ~/.config/htop: htop
+    ~/.config/i3: i3
+    ~/.config/dunst: dunst
+    ~/.config/rofi: rofi
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+
