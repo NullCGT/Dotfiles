@@ -17,7 +17,7 @@ OPTIONS=dogname:Huan
 # Default name to your starting pet if it is a horse.
 OPTIONS=horsename:Windfola
 # Starting gender.
-OPTIONS=gender:female
+# OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
 OPTIONS=fruit:honey cake 
 # Uncomment this line to start without a pet.
@@ -26,6 +26,17 @@ OPTIONS=fruit:honey cake
 OPTIONS=notutorial
 # Comment out this line to get tips
 OPTIONS=notips
+
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+# Start with nothing nothing at all.
+#OPTIONS=pauper
 
 ########################
 ####### Controls #######
@@ -55,11 +66,8 @@ OPTIONS=sortloot:full
 ############################
 ####### Autocomplete #######
 ############################
-# Extended commands to autocomplete.
-# Autocomplete the travel command, since it is used often.
-AUTOCOMPLETE=travel
-# Autocomplete the twoweapon command, since it is used often.
-AUTOCOMPLETE=twoweapon
+# Useful for regular play
+AUTOCOMPLETE=travel,twoweapon,options,optionsfull,known,knownclass
 
 ###########################
 ######## Keybinds #########
@@ -191,17 +199,6 @@ OPTIONS=mouse_support
 # Window border style. 4 excludes the inventory window.
 OPTIONS=windowborders:4
 
-##########################
-####### Challenges #######
-##########################
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
-# Start with nothing nothing at all.
-#OPTIONS=pauper
-
 ####################################
 ######## Developer Settings ########
 ####################################
@@ -238,16 +235,20 @@ AUTOPICKUP_EXCEPTION="<Amulet of Yendor named real"
 AUTOPICKUP_EXCEPTION=">scroll .* scare monster"
 
 # Avoid wands called empty and nothing
+AUTOPICKUP_EXCEPTION=">[0-9]*:0"
 AUTOPICKUP_EXCEPTION="> named empty"
 AUTOPICKUP_EXCEPTION="> nothing"
 
+# Grab formally identified artifacts
+AUTOPICKUP_EXCEPTION="<^the "
+
 # Avoid things that are dangerous or useless
 AUTOPICKUP_EXCEPTION="> called bad"
-AUTOPICKUP_EXCEPTION="> called worthless"
 AUTOPICKUP_EXCEPTION="> cancellation"
 AUTOPICKUP_EXCEPTION=">loadstone"
 AUTOPICKUP_EXCEPTION=">rock"
 AUTOPICKUP_EXCEPTION=">gray stone"
+AUTOPICKUP_EXCEPTION=">^[a0-9]+ stone"
 AUTOPICKUP_EXCEPTION=">worthless"
 
 # Grab luckstones and touchstones
@@ -274,8 +275,8 @@ OPTIONS=color, menucolors
 MENUCOLOR=" blessed "=cyan
 MENUCOLOR=" uncursed "=green
 MENUCOLOR=" cursed "=orange
-MENUCOLOR="holy water"=brightcyan
-MENUCOLOR="unholy water"=orange
+MENUCOLOR=" holy "=brightcyan
+MENUCOLOR=" unholy "=orange
 
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
@@ -290,7 +291,6 @@ MENUCOLOR=" yellow (gem|dragon|glass)"=yellow
 MENUCOLOR=" violet (gem|dragon|glass)"=magenta
 MENUCOLOR="dilithium crystal"=white
 MENUCOLOR="rubies"=red
-MENUCOLOR="emeralds"=green
 MENUCOLOR="jacinth stone"=red
 MENUCOLOR="turquoise stone"=blue
 MENUCOLOR="citrine stone"=yellow
@@ -305,19 +305,19 @@ MENUCOLOR="fluorite stone"=blue
 MENUCOLOR="jade stone"=green
 MENUCOLOR="obsidian stone"=black
 MENUCOLOR="agate stone"=orange
-MENUCOLOR="ruby$"=red
-MENUCOLOR="emerald$"=green
-MENUCOLOR="diamond$"=white
-MENUCOLOR="sapphire$"=blue
-MENUCOLOR="garnet$"=red
-MENUCOLOR="opal$"=white
+MENUCOLOR="ruby($| \()"=red
+MENUCOLOR="emerald($| \(|s)"=green
+MENUCOLOR="diamond($| \(|s)"=white
+MENUCOLOR="sapphire($| \(|s)"=blue
+MENUCOLOR="garnet($| \(|s)"=red
+MENUCOLOR="opal($| \(|s)"=white
 MENUCOLOR="black opal"=black
 
 ######## Equipment ##########
-MENUCOLOR=" \((being|wielded|weapon)"=gray&underline
-MENUCOLOR=" blessed .* \((being|wielded|weapon)"=brightcyan&underline
-MENUCOLOR=" uncursed .* \((being|wielded|weapon)"=brightgreen&underline
-MENUCOLOR=" cursed .* \((being|wielded|weapon)"=red&underline
+MENUCOLOR=" \((being|wielded|weapon|at the ready)"=gray&underline
+MENUCOLOR=" blessed (.*) \((being|wielded|weapon|at the ready)"=brightcyan&underline
+MENUCOLOR=" uncursed (.*) \((being|wielded|weapon|at the ready)"=brightgreen&underline
+MENUCOLOR=" cursed (.*) \((being|wielded|weapon|at the ready)"=red&underline
 MENUCOLOR="\(lit\)"=yellow&underline
 
 ####### Quest Items ########
@@ -348,7 +348,8 @@ MENUCOLOR="(Basic\ |Skilled|Expert|Master|Grand Master)"=white
 MENUCOLOR="Basic\ "=yellow
 MENUCOLOR="Skilled"=green
 MENUCOLOR="Expert"=brightgreen
-MENUCOLOR="(Master|Grand Master)"=cyan
+MENUCOLOR="Master"=cyan
+MENUCOLOR="Grand Master"=brightcyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow
@@ -426,6 +427,9 @@ OPTIONS=hilite_status:characteristics/<=6/red
 ##########################
 ######## Messages ########
 ##########################
+# Save a longer history than default.
+OPTIONS=msghistory:40
+
 # Options relating to the display of messages.
 # Many of these are pulled from the NetHack wiki.
 # Annoying messages. These are hidden entirely.
@@ -480,7 +484,7 @@ MSGTYPE=stop "You see here a c(hi|o)ckatrice corpse."
 MSGTYPE=stop "You are beginning to feel weak."
 MSGTYPE=stop "So thou thought thou couldst .*"
 MSGTYPE=stop "Double Trouble..."
-MSGTYPE=stop "(Demogorgon|Dispater|Yeenoghu|Geryon) appears *"
+MSGTYPE=stop "(Demogorgon|Dispater|Yeenoghu|Geryon) appears"
 
 # Stop the player if they receive a notification about having low hit points.
 MSGTYPE=stop "You hear the wailing of the Banshee..."
