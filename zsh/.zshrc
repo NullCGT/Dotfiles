@@ -1,6 +1,3 @@
-# Add this path so we can execute pywal
-export PATH="$HOME/.local/bin:$PATH"
-# export PATH="$HOME/Downloads/WeiDU-Linux:$PATH"
 # Use MOST for our pager
 export PAGER="most"
 
@@ -70,7 +67,3 @@ alias glog="git log --graph --pretty=full"
 # Eza
 alias eza="eza --icons=always --color-scale=age -s=name -la"
 
-# Pywal Persistency
-if [[ "$TERM" == "alacritty" ]] then
-    (cat ~/.cache/wal/sequences &)
-fi

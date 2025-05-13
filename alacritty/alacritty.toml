@@ -1,5 +1,6 @@
 [general]
 live_config_reload = true
+import = ["~/.config/alacritty/themes/themes/rigel.toml"]
 
 [bell]
 animation = "EaseOutSine"
