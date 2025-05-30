@@ -7,10 +7,71 @@
 #################################
 ### dNetHack Gameplay Options ###
 #################################
-# Stolen from RikerW!
-OPTIONS=pokedex:stats generation weight resists conveys movement thinking biology mechanics race vision attacks
+# Stolen from various dNetHack players.
+# Turn off role-specific item names
+OPTIONS=obscure_role_obj_names
+# Notify hp changes
+OPTIONS=hp_notify
+# Highlight obj piles
+OPTIONS=hilite_obj_piles
+# Artifacts
+OPTIONS=artifact_descriptors, force_artifact_names
+# Pokedex Setup
+OPTIONS=pokedex:stats generation weight resists conveys movement thinking biology mechanics race vision attacks wards
+# Quad Status
+OPTIONS=statuslines:4
+# Dungeon Colors
 OPTIONS=dnethack_dungeon_colors
+# RT Clock
 OPTIONS=showrealtime
+# Queries
+OPTIONS=querytype_regex
+QUERYTYPE=yesno ".*Eat it anyway.*"
+QUERYTYPE=yesno "Tell .* your real location\?"
+QUERYTYPE=yesno ".*Sacrifice it anyway.*"
+# Statuscolors
+STATUSCOLOR=panic:yellow&underline,stmblng:yellow&underline,stggrng:yellow&underline,babble:yellow&underline
+STATUSCOLOR=scream:yellow&underline
+STATUSCOLOR=ovrwound:yellow,waning:orange,unwound:red&bold
+STATUSCOLOR=slipping:red&inverse,slipped:red&inverse&blink
+# Monsters
+MONSTERCOLOR=mind flayer:lightmagenta
+MONSTERCOLOR=master mind flayer:lightmagenta
+MONSTERTEMPLATE=tomb:bg:green
+MONSTERTEMPLATE=pseudonatural:bg:cyan
+MONSTERTEMPLATE=cranium:bg:black
+MONSTERTEMPLATE=psurlon:bg:white
+MONSTERTEMPLATE=yith:bg:black
+# Msgtypes
+MSGTYPE=stop "You feel the shoggoth pull on your weapon!"
+MSGTYPE=stop "Your weapon is sucked out of your grasp!"
+MSGTYPE=stop "Your * is sucked off!"
+MSGTYPE=stop "You feel the * trying to suck your extremities off!"
+MSGTYPE=stop "You feel the shoggoth trying to suck your extremities off!"
+MSGTYPE=stop "Your legs twist from the suction!" 
+MSGTYPE=stop "You feel horrible fingers work at your armor."
+MSGTYPE=stop "The horrible fingers unfasten your armor!"  
+MSGTYPE=stop "Blasphemous geometries assault your sanity!"
+MSGTYPE=stop "You tear at yourself in horror!"
+MSGTYPE=stop "Your brain is eaten!"
+MSGTYPE=stop "You feel * You must have been *"  
+MSGTYPE=stop "You no longer feel the need to breathe!"
+MSGTYPE=stop "You feel able to breathe underwater!" 
+MSGTYPE=stop "You feel able to swim!"
+MSGTYPE=stop "You feel waterproof!"
+MSGTYPE=stop "Your outline shimmers and shifts."
+MSGTYPE=stop "You feel especially energetic." 
+MSGTYPE=stop "You feel tired!"
+MSGTYPE=stop "You feel warmer!" 
+MSGTYPE=stop "You feel cooler!"
+MSGTYPE=stop "You feel conductive!"
+MSGTYPE=stop "You feel stupid!"
+MSGTYPE=stop "You feel repulsive!"  
+MSGTYPE=stop "You feel feverish." 
+MSGTYPE=stop "Your senses fail!"
+MSGTYPE=stop "You are gradually rotting to dust!"
+MSGTYPE=stop "You stop shedding dust."
+MSGTYPE=stop "You slow down."
 
 #################################
 ######## Personalization ########
@@ -69,6 +130,8 @@ OPTIONS=sortloot:full
 BIND=~:rub
 # Bind dip to !
 BIND=!:dip
+# Bind ability to ]
+BIND=]:ability
 
 ###############################
 ######## Connectivity #########
@@ -138,6 +201,8 @@ OPTIONS=toptenwin
 OPTIONS=windowcolors:menu white/black message white/black status white/black
 # Reverse video for "--More--"
 OPTIONS=standout
+# 3.4.3 Boulder
+OPTIONS=boulder:0
 
 #####################################
 ######## Curses-Specific GUI ########
@@ -232,6 +297,8 @@ OPTIONS=color, menucolors
 
 ########### BUC #############
 MENUCOLOR=" blessed "=cyan
+MENUCOLOR=" consecrated " = brightcyan
+MENUCOLOR=" descrated " = red
 MENUCOLOR=" uncursed "=green
 MENUCOLOR=" cursed "=orange
 MENUCOLOR=" holy "=cyan
