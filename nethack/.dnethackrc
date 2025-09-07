@@ -18,12 +18,12 @@ OPTIONS=hilite_obj_piles
 OPTIONS=artifact_descriptors, force_artifact_names
 # Pokedex Setup
 OPTIONS=pokedex:stats generation weight resists conveys movement thinking biology mechanics race vision attacks wards
+# Quad Status
+OPTIONS=statuslines:4
 # Dungeon Colors
 OPTIONS=dnethack_dungeon_colors
 # RT Clock
 OPTIONS=showrealtime
-# Autopickup Regex
-OPTIONS=apexception_regex
 # Queries
 OPTIONS=querytype_regex
 QUERYTYPE=yesno ".*Eat it anyway.*"
@@ -36,10 +36,10 @@ MENUCOLOR=" Third Key "=blue&bold
 MENUCOLOR="runed candle"=blue&bold
 MENUCOLOR="candle of invocation"=blue&bold
 # Statuscolors
-STATUSCOLOR=panic:yellow,stmblng:yellow,stggrng:yellow,babble:yellow
-STATUSCOLOR=scream:yellow
+STATUSCOLOR=panic:yellow&underline,stmblng:yellow&underline,stggrng:yellow&underline,babble:yellow&underline
+STATUSCOLOR=scream:yellow&underline
 STATUSCOLOR=ovrwound:yellow,waning:orange,unwound:red&bold
-STATUSCOLOR=slipping:red,slipped:red&blink
+STATUSCOLOR=slipping:red&inverse,slipped:red&inverse&blink
 # Monsters
 MONSTERCOLOR=mind flayer:lightmagenta
 MONSTERCOLOR=master mind flayer:lightmagenta
