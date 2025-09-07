@@ -208,11 +208,11 @@ OPTIONS=windowborders:4
 ####################################
 # These options are generally only useful when debugging the game.
 # Enable debug (wizard) mode.
-# OPTIONS=playmode:debug
+OPTIONS=playmode:debug
 # Enable sanity checks.
 OPTIONS=sanity_check
 # # Bind the command to regenerate a map to a key.
-# BIND=^u:wizmakemap 
+BIND=^u:wizmakemap 
 # Define the path to the wizkit file.
 # WIZKIT=.wizkit
 
@@ -352,12 +352,11 @@ MENUCOLOR="c(hi|o)ckatrice corpse.*"=brightmagenta&underline
 MENUCOLOR="(gone)"=magenta
 
 ########## Skills ###########
-MENUCOLOR="(Basic\ |Skilled|Expert|Master|Grand Master)"=white
-MENUCOLOR="Basic\ "=yellow
-MENUCOLOR="Skilled"=green
-MENUCOLOR="Expert"=brightgreen
-MENUCOLOR="Master"=cyan
-MENUCOLOR="Grand Master"=brightcyan
+MENUCOLOR="\[Basic\]"=yellow
+MENUCOLOR="\[Skilled\]"=green
+MENUCOLOR="\[Expert\]"=brightgreen
+MENUCOLOR="\[Master\]"=cyan
+MENUCOLOR="\[Grand Master\]"=brightcyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow

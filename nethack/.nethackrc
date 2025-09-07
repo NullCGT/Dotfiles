@@ -350,12 +350,11 @@ MENUCOLOR="c(hi|o)ckatrice corpse.*"=brightmagenta&underline
 MENUCOLOR="(gone)"=magenta
 
 ########## Skills ###########
-MENUCOLOR="(Basic\ |Skilled|Expert|Master|Grand Master)"=white
-MENUCOLOR="Basic\ "=yellow
-MENUCOLOR="Skilled"=green
-MENUCOLOR="Expert"=brightgreen
-MENUCOLOR="Master"=cyan
-MENUCOLOR="Grand Master"=brightcyan
+MENUCOLOR="\[Basic\]"=yellow
+MENUCOLOR="\[Skilled\]"=green
+MENUCOLOR="\[Expert\]"=brightgreen
+MENUCOLOR="\[Master\]"=cyan
+MENUCOLOR="\[Grand Master\]"=brightcyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow
