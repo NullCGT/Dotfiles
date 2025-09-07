@@ -210,9 +210,9 @@ OPTIONS=windowborders:4
 # Enable sanity checks.
 OPTIONS=sanity_check
 # # Bind the command to regenerate a map to a key.
-# BIND=^m:wizmakemap 
+# BIND=^u:wizmakemap 
 # Define the path to the wizkit file.
-#WIZKIT=.wizkit
+# WIZKIT=.wizkit
 
 ###########################
 ######## Autopickup #######
@@ -281,7 +281,7 @@ MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
 
 ##### Level Annotations #####
-MENUCOLOR="Level .* \""=green
+MENUCOLOR="Level .*\:""=green
 MENUCOLOR="You are here"=blue
 
 ###### Colored Items ########
@@ -327,11 +327,11 @@ MENUCOLOR=" cursed (.*) \((being|wielded|weapon|at the ready)"=red&underline
 MENUCOLOR="\(lit\)"=yellow&underline
 
 ####### Quest Items ########
-MENUCOLOR="bell of opening"=brightblue&bold
+MENUCOLOR="Bell of Opening"=brightblue&bold
 MENUCOLOR="silver bell"=brightblue&bold
 MENUCOLOR="Book of the Dead"=brightblue&bold
 MENUCOLOR="papyrus spellbook"=brightblue&bold
-MENUCOLOR="candelabrum"=brightblue&bold
+MENUCOLOR="(C|c)andelabrum"=brightblue&bold
 
 ######### Wishing ###########
 MENUCOLOR="wishing"=brightblue&bold

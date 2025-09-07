@@ -11,23 +11,23 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-OPTIONS=catname:Umuiyan
+OPTIONS=catname:Bingo
 # Default name for your starting pet if it is a dog.
-OPTIONS=dogname:Huan
+OPTIONS=dogname:Koala
 # Default name to your starting pet if it is a horse.
-OPTIONS=horsename:Windfola
+OPTIONS=horsename:Dawnbreaker
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:honey cake 
+OPTIONS=fruit:borger 
 # Uncomment this line to start without a pet.
 OPTIONS=nopet
-# Comment out this line to turn off the tutorial
+# Comment out this line to get a tutorial
 OPTIONS=notutorial
 # Comment out this line to get tips
 OPTIONS=notips
-
-OPTIONS=taunt:flip the bird at everyone.
+# Custom Taunt
+OPTIONS=taunt:do a little dance.
 
 ##########################
 ####### Challenges #######
@@ -64,6 +64,8 @@ OPTIONS=mention_decor
 OPTIONS=mention_walls
 # Sort loot always.
 OPTIONS=sortloot:full
+# Autounlock ask optimization.
+OPTIONS=autounlock:apply-key+kick+force
 
 ############################
 ####### Autocomplete #######
@@ -151,7 +153,7 @@ OPTIONS=runmode:teleport
 ######################
 # GUI Options
 # The type of GUI to use, such as curses or tty.
-OPTIONS=windowtype:tty
+OPTIONS=windowtype:curses
 # Curses only option to change how tame pets are indicated.
 OPTIONS=petattr:underline
 # Show experience on the status line.
@@ -189,9 +191,9 @@ OPTIONS=standout
 # Display the inventory onscreen at all times.
 OPTIONS=perm_invent
 # Status bar location.
-OPTIONS=align_status:top
+OPTIONS=align_status:bottom
 # Message window location.
-OPTIONS=align_message:bottom
+OPTIONS=align_message:top
 # Show dialogue in popup menus.
 OPTIONS=popup_dialog
 # Allow the user to look at things by using the mouse.
@@ -206,13 +208,13 @@ OPTIONS=windowborders:4
 ####################################
 # These options are generally only useful when debugging the game.
 # Enable debug (wizard) mode.
-OPTIONS=playmode:debug
+# OPTIONS=playmode:debug
 # Enable sanity checks.
 OPTIONS=sanity_check
-# Bind the command to regenerate a map to a key.
-BIND=^u:wizmakemap 
+# # Bind the command to regenerate a map to a key.
+# BIND=^u:wizmakemap 
 # Define the path to the wizkit file.
-#WIZKIT=.wizkit
+# WIZKIT=.wizkit
 
 ###########################
 ######## Autopickup #######
@@ -280,6 +282,10 @@ MENUCOLOR=" cursed "=orange
 MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
 
+##### Level Annotations #####
+MENUCOLOR="Level .*\:""=green
+MENUCOLOR="You are here"=blue
+
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
 MENUCOLOR=" red (gem|dragon|glass)"=red
@@ -323,11 +329,11 @@ MENUCOLOR=" cursed (.*) \((being|wielded|weapon|at the ready)"=red&underline
 MENUCOLOR="\(lit\)"=yellow&underline
 
 ####### Quest Items ########
-MENUCOLOR="bell of opening"=brightblue&bold
+MENUCOLOR="Bell of Opening"=brightblue&bold
 MENUCOLOR="silver bell"=brightblue&bold
 MENUCOLOR="Book of the Dead"=brightblue&bold
 MENUCOLOR="papyrus spellbook"=brightblue&bold
-MENUCOLOR="candelabrum"=brightblue&bold
+MENUCOLOR="(C|c)andelabrum"=brightblue&bold
 
 ######### Wishing ###########
 MENUCOLOR="wishing"=brightblue&bold
