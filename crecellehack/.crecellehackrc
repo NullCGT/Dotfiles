@@ -151,7 +151,7 @@ OPTIONS=runmode:teleport
 ######################
 # GUI Options
 # The type of GUI to use, such as curses or tty.
-OPTIONS=windowtype:curses
+OPTIONS=windowtype:tty
 # Curses only option to change how tame pets are indicated.
 OPTIONS=petattr:underline
 # Show experience on the status line.
@@ -170,7 +170,7 @@ OPTIONS=showvers
 # Define which prompts appear at the end of the game.
 OPTIONS=disclose:+i +a +v +g +c +o
 # Show object symbols in the menu if possible.
-OPTIONS=menu_objsyms
+OPTIONS=menu_objsyms:3
 # Split the status line into three separate lines.
 OPTIONS=statuslines:3
 # Do not assume items are uncursed by default.
@@ -210,7 +210,7 @@ OPTIONS=playmode:debug
 # Enable sanity checks.
 OPTIONS=sanity_check
 # Bind the command to regenerate a map to a key.
-BIND=^m:wizmakemap 
+BIND=^u:wizmakemap 
 # Define the path to the wizkit file.
 #WIZKIT=.wizkit
 

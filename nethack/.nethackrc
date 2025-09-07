@@ -168,7 +168,7 @@ OPTIONS=showvers
 # Define which prompts appear at the end of the game.
 OPTIONS=disclose:+i +a +v +g +c +o
 # Show object symbols in the menu if possible.
-OPTIONS=menu_objsyms
+OPTIONS=menu_objsyms:3
 # Split the status line into three separate lines.
 OPTIONS=statuslines:3
 # Do not assume items are uncursed by default.
@@ -277,6 +277,10 @@ MENUCOLOR=" uncursed "=green
 MENUCOLOR=" cursed "=orange
 MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
+
+##### Level Annotations #####
+MENUCOLOR="Level .* \""=green
+MENUCOLOR="You are here"=blue
 
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
