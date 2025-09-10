@@ -7,7 +7,7 @@
 
 - link:
     ~/.nethackrc: nethack/.nethackrc
-    ~/.crecellehackrc: crecellehack/.crecellehackrc
+    ~/.crecellehackrc: nethack/.crecellehackrc
     ~/.zshrc: zsh/.zshrc
     ~/.config/alacritty: alacritty
     ~/.config/nvim: nvim
