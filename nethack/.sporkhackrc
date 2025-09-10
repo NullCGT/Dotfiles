@@ -1,5 +1,5 @@
 ###########################################
-####### AntiGulp's NetHack RC File ########
+###### AntiGulp's SporkHack RC File #######
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
@@ -11,15 +11,15 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-OPTIONS=catname:Lidda
+OPTIONS=catname:Tifa
 # Default name for your starting pet if it is a dog.
-OPTIONS=dogname:Tordek
+OPTIONS=dogname:Cloud
 # Default name for your starting pet if it is a horse.
-OPTIONS=horsename:Redgar
+OPTIONS=horsename:Barret
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:trail ration
+OPTIONS=fruit:chocobo steak
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
@@ -50,17 +50,6 @@ OPTIONS=autodig
 OPTIONS=autoopen
 # Sort loot always.
 OPTIONS=sortloot:full
-# Quiver fired items
-OPTIONS=quiver_fired
-
-###########################
-######## Keybinds #########
-###########################
-# Commands to bind to specific keys.
-# Bind rub to ~
-BIND=~:rub
-# Bind dip to !
-BIND=!:dip
 
 ###############################
 ######## Connectivity #########
@@ -70,8 +59,6 @@ BIND=!:dip
 OPTIONS=news
 # Allow other users to send you mail if you are on a public server.
 OPTIONS=mail
-# Enable bones file loading.
-OPTIONS=bones
 
 ###########################
 ####### High Scores #######
@@ -89,9 +76,6 @@ OPTIONS=hilite_pet
 OPTIONS=lit_corridor
 # Use the dark gray color
 OPTIONS=use_darkgray
-# Tile data is disabled. To enable tile data, this must be toggled, and the
-# curses interface must be disabled.
-OPTIONS=!vt_tiledata
 # Do not repeatedly update the display when travelling or running.
 OPTIONS=runmode:teleport
 

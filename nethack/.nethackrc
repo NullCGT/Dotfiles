@@ -14,7 +14,7 @@ OPTIONS=name:Antigulp
 OPTIONS=catname:Umuiyan
 # Default name for your starting pet if it is a dog.
 OPTIONS=dogname:Huan
-# Default name to your starting pet if it is a horse.
+# Default name for your starting pet if it is a horse.
 OPTIONS=horsename:Windfola
 # Starting gender.
 # OPTIONS=gender:female
@@ -281,7 +281,7 @@ MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
 
 ##### Level Annotations #####
-MENUCOLOR="Level .*\:""=green
+MENUCOLOR="Level .*\:"=green
 MENUCOLOR="You are here"=blue
 
 ###### Colored Items ########
@@ -495,3 +495,6 @@ MSGTYPE=stop "(Demogorgon|Dispater|Yeenoghu|Geryon) appears"
 MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
 MSGTYPE=stop "(Wizard|Elf|Valkyrie) is about to die."
+
+# Don't miss skill enhancement messages.
+MSGTYPE=stop "You feel more confident in your .*"

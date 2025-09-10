@@ -1,8 +1,24 @@
 ###########################################
-####### AntiGulp's NetHack RC File ########
+####### AntiGulp's SLASH'EM RC File #######
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
+
+#################################
+######## SLASH'EM OPTIONS #######
+#################################
+# Show damage numbers
+OPTIONS=showdmg
+# Show weight
+OPTIONS=showweight
+# Show weight in inventory
+OPTIONS=invweight
+# Show menu on <esc>
+OPTIONS=menu_on_esc
+# Default name for your starting pet if it is a wolf.
+OPTIONS=wolfname:Wulf
+# Default name for your starting pet if it is a ghoul.
+OPTIONS=ghoulname:Fester
 
 #################################
 ######## Personalization ########
@@ -11,15 +27,15 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-OPTIONS=catname:Lidda
+OPTIONS=catname:Puss in Boots
 # Default name for your starting pet if it is a dog.
-OPTIONS=dogname:Tordek
+OPTIONS=dogname:Shrek
 # Default name for your starting pet if it is a horse.
-OPTIONS=horsename:Redgar
+OPTIONS=horsename:Donkey
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:trail ration
+OPTIONS=fruit:Farquad Meal
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
@@ -48,19 +64,6 @@ OPTIONS=pushweapon
 OPTIONS=autodig
 # Automatically open doors when moving into them.
 OPTIONS=autoopen
-# Sort loot always.
-OPTIONS=sortloot:full
-# Quiver fired items
-OPTIONS=quiver_fired
-
-###########################
-######## Keybinds #########
-###########################
-# Commands to bind to specific keys.
-# Bind rub to ~
-BIND=~:rub
-# Bind dip to !
-BIND=!:dip
 
 ###############################
 ######## Connectivity #########
@@ -70,8 +73,6 @@ BIND=!:dip
 OPTIONS=news
 # Allow other users to send you mail if you are on a public server.
 OPTIONS=mail
-# Enable bones file loading.
-OPTIONS=bones
 
 ###########################
 ####### High Scores #######
@@ -87,11 +88,6 @@ OPTIONS=scores:10t 2a o
 OPTIONS=hilite_pet
 # Visually distinguish lit corridors from dark corridors.
 OPTIONS=lit_corridor
-# Use the dark gray color
-OPTIONS=use_darkgray
-# Tile data is disabled. To enable tile data, this must be toggled, and the
-# curses interface must be disabled.
-OPTIONS=!vt_tiledata
 # Do not repeatedly update the display when travelling or running.
 OPTIONS=runmode:teleport
 
@@ -100,29 +96,13 @@ OPTIONS=runmode:teleport
 ######################
 # GUI Options
 # The type of GUI to use, such as curses or tty.
-OPTIONS=windowtype:curses
-OPTIONS=cursesgraphics
+OPTIONS=windowtype:tty
 # Curses only option to change how tame pets are indicated.
-OPTIONS=petattr:underline
-# Show experience on the status line.
 OPTIONS=showexp
 # Show the score on the status line.
 OPTIONS=showscore
-# Display a visual bar to indicate hit points.
-OPTIONS=hitpointbar
-# Force the inventory menu to appear, rather than asking the player what item to
-# use from a list of characters.
-OPTIONS=force_invmenu
 # Display the turn count on the status line.
 OPTIONS=time
-# Display the version number.
-OPTIONS=showvers
-# Define which prompts appear at the end of the game.
-OPTIONS=disclose:+i +a +v +g +c +o
-# Show object symbols in the menu if possible.
-OPTIONS=menu_glyphs
-# Split the status line into three separate lines.
-OPTIONS=statuslines:3
 # Do not assume items are uncursed by default.
 OPTIONS=showbuc
 # Show the top ten scores.
@@ -133,31 +113,11 @@ OPTIONS=windowcolors:menu white/black message white/black status white/black
 OPTIONS=standout
 # 3.4.3 Boulder
 OPTIONS=boulder:0
-# Highlight obj piles
-OPTIONS=hilite_obj_piles
-# Highlight hidden stairs
-OPTIONS=hilite_hidden_stairs
-
-#####################################
-######## Curses-Specific GUI ########
-#####################################
-# Options for the curses interface.
-# Display the inventory onscreen at all times.
+# Permanent Inventory
 OPTIONS=perm_invent
-# Status bar location.
-OPTIONS=align_status:bottom
-# Message window location.
-OPTIONS=align_message:top
-# Show dialogue in popup menus.
-OPTIONS=popup_dialog
-# Allow the user to look at things by using the mouse.
-# OPTIONS=clicklook
-# Enable mouse support.
-OPTIONS=mouse_support
-# Window border style. 4 excludes the inventory window.
-OPTIONS=windowborders:4
-# Use utf8 symbols
-OPTIONS=!utf8graphics
+# Graphics
+OPTIONS=!DECgraphics
+OPTIONS=!IBMgraphics
 
 ####################################
 ######## Developer Settings ########
@@ -238,48 +198,6 @@ MENUCOLOR=" cursed "=orange
 MENUCOLOR=" holy "=cyan
 MENUCOLOR=" unholy "=orange
 
-###### Colored Items ########
-MENUCOLOR=" white (gem|dragon|glass)"=white
-MENUCOLOR=" red (gem|dragon|glass)"=red
-MENUCOLOR=" blue (gem|dragon|glass)"=blue
-MENUCOLOR=" green (gem|dragon|glass)"=green
-MENUCOLOR=" orange (gem|dragon|glass)"=orange
-MENUCOLOR=" white (gem|dragon|glass)"=white
-MENUCOLOR=" black (gem|dragon|glass)"=black
-MENUCOLOR=" yellowish brown (gem|glass)"=brown
-MENUCOLOR=" yellow (gem|dragon|glass)"=yellow
-MENUCOLOR=" violet (gem|dragon|glass)"=magenta
-MENUCOLOR="dilithium crystal"=white
-MENUCOLOR="rubies"=red
-MENUCOLOR="jacinth stone"=red
-MENUCOLOR="turquoise stone"=blue
-MENUCOLOR="citrine stone"=yellow
-MENUCOLOR="aquamarine stone"=green
-MENUCOLOR="amber stone"=brown
-MENUCOLOR="topaz stone"=brown
-MENUCOLOR="jet stone"=black
-MENUCOLOR="chrysoberyl stone"=yellow
-MENUCOLOR="amethyst stone"=magenta
-MENUCOLOR="jasper stone"=red
-MENUCOLOR="fluorite stone"=blue
-MENUCOLOR="jade stone"=green
-MENUCOLOR="obsidian stone"=black
-MENUCOLOR="agate stone"=orange
-MENUCOLOR="ruby($| \()"=red
-MENUCOLOR="emerald($| \(|s)"=green
-MENUCOLOR="diamond($| \(|s)"=white
-MENUCOLOR="sapphire($| \(|s)"=blue
-MENUCOLOR="garnet($| \(|s)"=red
-MENUCOLOR="opal($| \(|s)"=white
-MENUCOLOR="black opal"=black
-
-######## Equipment ##########
-MENUCOLOR=" \((being|wielded|weapon|at the ready)"=gray&underline
-MENUCOLOR=" blessed (.*) \((being|wielded|weapon|at the ready)"=cyan&underline
-MENUCOLOR=" uncursed (.*) \((being|wielded|weapon|at the ready)"=green&underline
-MENUCOLOR=" cursed (.*) \((being|wielded|weapon|at the ready)"=red&underline
-MENUCOLOR="\(lit\)"=yellow&underline
-
 ####### Quest Items ########
 MENUCOLOR="bell of opening"=blue&bold
 MENUCOLOR="silver bell"=blue&bold
@@ -314,7 +232,6 @@ MENUCOLOR="\[Grand Master\]"=brightcyan
 ########### Statuscolors ##########
 ###################################
 # Options relating to status highlighting.
-OPTIONS=statushilites:10
 OPTIONS=statuscolors
 
 ########### Hit Points ############

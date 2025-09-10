@@ -1,0 +1,211 @@
+###########################################
+####### AntiGulp's NetHack RC File ########
+# Hi, I'm AntiGulp!
+# Feel free to copy any or all of these settings for yourself.
+###########################################
+
+#################################
+######## Personalization ########
+#################################
+# Options pertaining to the personalization of your character or game.
+# The name of your character.
+OPTIONS=name:Antigulp
+# Default name for your starting pet if it is a cat.
+OPTIONS=catname:Spades
+# Default name for your starting pet if it is a dog.
+OPTIONS=dogname:Clubs
+# Default name for your starting pet if it is a horse.
+OPTIONS=horsename:Diamonds
+# Starting gender.
+# OPTIONS=gender:female
+# Fruit name. Fruits are renamed to this. Defaults to "slime mold."
+OPTIONS=fruit:deck of cards
+# Uncomment this line to start without a pet.
+#OPTIONS=nopet
+
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+
+########################
+####### Gameplay #######
+########################
+# Miscelaneous gampelay options.
+# Push unwielded weapon to the alternate weapon slot.
+OPTIONS=pushweapon
+# Automatically dig when moving against a wall while wielding a pickaxe.
+OPTIONS=autodig
+# Sort loot always.
+OPTIONS=sortloot:full
+
+###############################
+######## Connectivity #########
+###############################
+# Options relating to online functionality.
+# Enable news functionality.
+OPTIONS=news
+# Allow other users to send you mail if you are on a public server.
+OPTIONS=mail
+
+###########################
+####### High Scores #######
+###########################
+# High score options.
+# Format the high score list.
+OPTIONS=scores:10t 2a o
+
+#########################
+######## Display ########
+#########################
+# Highlight tame monsters.
+OPTIONS=hilite_pet
+# Visually distinguish lit corridors from dark corridors.
+OPTIONS=lit_corridor
+
+######################
+######## GUI #########
+######################
+# GUI Options
+# The type of GUI to use, such as curses or tty.
+OPTIONS=windowtype:tty
+# Show experience on the status line.
+OPTIONS=showexp
+# Show the score on the status line.
+OPTIONS=showscore
+# Display the turn count on the status line.
+OPTIONS=time
+# Do not assume items are uncursed by default.
+OPTIONS=showbuc
+# Show the top ten scores.
+OPTIONS=toptenwin
+# Window port colors.
+OPTIONS=windowcolors:menu white/black message white/black status white/black
+# Reverse video for "--More--"
+OPTIONS=standout
+# 3.4.3 Boulder
+OPTIONS=boulder:0
+# Display the inventory onscreen at all times.
+OPTIONS=perm_invent
+
+####################################
+######## Developer Settings ########
+####################################
+# These options are generally only useful when debugging the game.
+# Enable debug (wizard) mode.
+# OPTIONS=playmode:debug
+# Enable sanity checks.
+OPTIONS=sanity_check
+# # Bind the command to regenerate a map to a key.
+# BIND=^m:wizmakemap 
+# Define the path to the wizkit file.
+#WIZKIT=.wizkit
+
+###########################
+######## Autopickup #######
+###########################
+# Autopickup options.
+# Enable autopickup by default.
+OPTIONS=autopickup
+# Define which item symbols to automatically pick up.
+OPTIONS=pickup_types:$?!/=*"
+# Automatically pick up thrown or fired projectiles.
+OPTIONS=pickup_thrown
+# Avoid picking up things that will burden us.
+OPTIONS=pickup_burden:unencumbered
+
+###########################
+## Autopickup Exceptions ##
+###########################
+# Thanks NetHack wiki!
+# Only pick up the named Amulet of Yendor
+AUTOPICKUP_EXCEPTION=">Amulet of Yendor"
+AUTOPICKUP_EXCEPTION="<Amulet of Yendor named real"
+AUTOPICKUP_EXCEPTION=">scroll .* scare monster"
+
+# Avoid wands called empty and nothing
+AUTOPICKUP_EXCEPTION=">[0-9]*:0"
+AUTOPICKUP_EXCEPTION="> named empty"
+AUTOPICKUP_EXCEPTION="> nothing"
+
+# Grab formally identified artifacts
+AUTOPICKUP_EXCEPTION="<^the "
+
+# Avoid things that are dangerous or useless
+AUTOPICKUP_EXCEPTION="> called bad"
+AUTOPICKUP_EXCEPTION="> cancellation"
+AUTOPICKUP_EXCEPTION=">loadstone"
+AUTOPICKUP_EXCEPTION=">rock"
+AUTOPICKUP_EXCEPTION=">gray stone"
+AUTOPICKUP_EXCEPTION=">^[a0-9]+ stone"
+AUTOPICKUP_EXCEPTION=">worthless"
+
+# Grab luckstones and touchstones
+AUTOPICKUP_EXCEPTION="<luckstone"
+AUTOPICKUP_EXCEPTION="< called luck"
+AUTOPICKUP_EXCEPTION="<touchstone"
+
+# Certain items should always be picked up. This list notably does NOT
+# contain wands of wishing. When we see a wand of wishing, we need to
+# KNOW that it is there, and therefore set a msgtype rather than an
+# autopickup exception.
+AUTOPICKUP_EXCEPTION="<wand of death"
+AUTOPICKUP_EXCEPTION="<wand of polymorph"
+AUTOPICKUP_EXCEPTION="<magic lamp"
+
+
+#############################
+######## Menu Colors ########
+#############################
+# Options relating to menu colors.
+OPTIONS=color, menucolors
+
+########### BUC #############
+MENUCOLOR=" blessed "=cyan
+MENUCOLOR=" uncursed "=green
+MENUCOLOR=" cursed "=orange
+MENUCOLOR=" holy "=cyan
+MENUCOLOR=" unholy "=orange
+
+####### Quest Items ########
+MENUCOLOR="bell of opening"=blue&bold
+MENUCOLOR="silver bell"=blue&bold
+MENUCOLOR="Book of the Dead"=blue&bold
+MENUCOLOR="papyrus spellbook"=blue&bold
+MENUCOLOR="candelabrum"=blue&bold
+
+######### Wishing ###########
+MENUCOLOR="wishing"=blue&bold
+
+###### Amulet of Yendor #####
+MENUCOLOR="Amulet of Yendor named real"=blue&bold
+# Cast it into the fire! Destroy it!
+MENUCOLOR="cheap plastic imitation"=magenta&underline
+
+###### Dangerous Items ######
+MENUCOLOR="wand (of|called) cancellation"=magenta&underline
+MENUCOLOR="loadstone"=magenta&underline
+MENUCOLOR="c(hi|o)ckatrice corpse.*"=magenta&underline
+
+########## Spells ###########
+MENUCOLOR="(gone)"=magenta
+
+########## Skills ###########
+MENUCOLOR="\[Basic\]"=yellow
+MENUCOLOR="\[Skilled\]"=green
+MENUCOLOR="\[Expert\]"=brightgreen
+MENUCOLOR="\[Master\]"=cyan
+MENUCOLOR="\[Grand Master\]"=brightcyan
+
+########### Money ###########
+MENUCOLOR="gold piece"=yellow
+
+##########################
+######## Messages ########
+##########################
+# Save a longer history than default.
+OPTIONS=msghistory:40

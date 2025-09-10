@@ -1,5 +1,5 @@
 ###########################################
-####### AntiGulp's NetHack RC File ########
+## AntiGulp's (not)(not)dNetHack RC File ##
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
@@ -10,10 +10,6 @@
 # Stolen from various dNetHack players.
 # Turn off role-specific item names
 OPTIONS=obscure_role_obj_names
-# Notify hp changes
-OPTIONS=hp_notify
-# Highlight obj piles
-OPTIONS=hilite_obj_piles
 # Artifacts
 OPTIONS=artifact_descriptors, force_artifact_names
 # Pokedex Setup
@@ -89,7 +85,7 @@ OPTIONS=name:Antigulp
 OPTIONS=catname:Meowth
 # Default name for your starting pet if it is a dog.
 OPTIONS=dogname:Growlithe
-# Default name to your starting pet if it is a horse.
+# Default name for your starting pet if it is a horse.
 OPTIONS=horsename:Ponyta
 # Starting gender.
 # OPTIONS=gender:female
@@ -106,8 +102,6 @@ OPTIONS=fruit:heap of pokechow
 #OPTIONS=blind
 # Start without clothing.
 #OPTIONS=nudist
-# Start with nothing nothing at all.
-#OPTIONS=pauper
 
 ########################
 ####### Controls #######
@@ -127,6 +121,8 @@ OPTIONS=autodig
 OPTIONS=autoopen
 # Sort loot always.
 OPTIONS=sortloot:full
+# Quiver fired items
+OPTIONS=quiver_fired
 
 ###########################
 ######## Keybinds #########
@@ -203,6 +199,12 @@ OPTIONS=windowcolors:menu white/black message white/black status white/black
 OPTIONS=standout
 # 3.4.3 Boulder
 OPTIONS=boulder:0
+# Highlight obj piles
+OPTIONS=hilite_obj_piles
+# Highlight hidden stairs
+OPTIONS=hilite_hidden_stairs
+# Notify hp changes
+OPTIONS=hp_notify
 
 #####################################
 ######## Curses-Specific GUI ########
@@ -305,7 +307,7 @@ MENUCOLOR=" holy "=cyan
 MENUCOLOR=" unholy "=orange
 
 ##### Level Annotations #####
-MENUCOLOR="Level .*\:""=green
+MENUCOLOR="Level .*\:"=green
 MENUCOLOR="You are here"=blue
 
 ###### Colored Items ########
@@ -493,3 +495,6 @@ MSGTYPE=stop "(Demogorgon|Dispater|Yeenoghu|Geryon) appears"
 MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop "You hear the howling of the CwnAnnwn..."
 MSGTYPE=stop "(Wizard|Elf|Valkyrie) is about to die."
+
+# Don't miss skill enhancement messages.
+MSGTYPE=stop "You feel more confident in your .*"

@@ -1,5 +1,5 @@
 ###########################################
-####### AntiGulp's NetHack RC File ########
+####### AntiGulp's xNetHack RC File #######
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
@@ -11,15 +11,15 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-OPTIONS=catname:Lidda
+OPTIONS=catname:Excelsior
 # Default name for your starting pet if it is a dog.
-OPTIONS=dogname:Tordek
+OPTIONS=dogname:Executor
 # Default name for your starting pet if it is a horse.
-OPTIONS=horsename:Redgar
+OPTIONS=horsename:Exemplary
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:trail ration
+OPTIONS=fruit:expired milk
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
@@ -42,16 +42,24 @@ OPTIONS=number_pad:0
 ####### Gameplay #######
 ########################
 # Miscelaneous gampelay options.
+# Potentially dangerous actions that should require explicit confirmation.
+OPTIONS=paranoid_confirm:quit attack wand-break eat Were-change pray trap swim Remove Confirm
 # Push unwielded weapon to the alternate weapon slot.
 OPTIONS=pushweapon
 # Automatically dig when moving against a wall while wielding a pickaxe.
 OPTIONS=autodig
 # Automatically open doors when moving into them.
 OPTIONS=autoopen
+# Mention walls when walked into.
+OPTIONS=mention_walls
 # Sort loot always.
 OPTIONS=sortloot:full
-# Quiver fired items
-OPTIONS=quiver_fired
+
+############################
+####### Autocomplete #######
+############################
+# Useful for regular play
+AUTOCOMPLETE=travel,twoweapon,options,known,knownclass
 
 ###########################
 ######## Keybinds #########
@@ -83,8 +91,18 @@ OPTIONS=scores:10t 2a o
 #########################
 ######## Display ########
 #########################
+# Display options.
+# Custom symbol replacements (monsters)
+SYMBOLS=S_boulder:0
+SYMBOLS=S_golem:7
+SYMBOLS=S_ghost:8
+# The symset to use when displaying characters.
+OPTIONS=symset:DECgraphics
+OPTIONS=roguesymset:Plain
 # Highlight tame monsters.
 OPTIONS=hilite_pet
+# Highlight piles of items.
+OPTIONS=hilite_pile
 # Visually distinguish lit corridors from dark corridors.
 OPTIONS=lit_corridor
 # Use the dark gray color
@@ -101,7 +119,6 @@ OPTIONS=runmode:teleport
 # GUI Options
 # The type of GUI to use, such as curses or tty.
 OPTIONS=windowtype:curses
-OPTIONS=cursesgraphics
 # Curses only option to change how tame pets are indicated.
 OPTIONS=petattr:underline
 # Show experience on the status line.
@@ -120,23 +137,17 @@ OPTIONS=showvers
 # Define which prompts appear at the end of the game.
 OPTIONS=disclose:+i +a +v +g +c +o
 # Show object symbols in the menu if possible.
-OPTIONS=menu_glyphs
+OPTIONS=menu_objsyms:3
 # Split the status line into three separate lines.
 OPTIONS=statuslines:3
 # Do not assume items are uncursed by default.
-OPTIONS=showbuc
+OPTIONS=!implicit_uncursed
 # Show the top ten scores.
 OPTIONS=toptenwin
 # Window port colors.
 OPTIONS=windowcolors:menu white/black message white/black status white/black
 # Reverse video for "--More--"
 OPTIONS=standout
-# 3.4.3 Boulder
-OPTIONS=boulder:0
-# Highlight obj piles
-OPTIONS=hilite_obj_piles
-# Highlight hidden stairs
-OPTIONS=hilite_hidden_stairs
 
 #####################################
 ######## Curses-Specific GUI ########
@@ -156,8 +167,6 @@ OPTIONS=popup_dialog
 OPTIONS=mouse_support
 # Window border style. 4 excludes the inventory window.
 OPTIONS=windowborders:4
-# Use utf8 symbols
-OPTIONS=!utf8graphics
 
 ####################################
 ######## Developer Settings ########
@@ -168,9 +177,9 @@ OPTIONS=!utf8graphics
 # Enable sanity checks.
 OPTIONS=sanity_check
 # # Bind the command to regenerate a map to a key.
-# BIND=^m:wizmakemap 
+# BIND=^u:wizmakemap 
 # Define the path to the wizkit file.
-#WIZKIT=.wizkit
+# WIZKIT=.wizkit
 
 ###########################
 ######## Autopickup #######
@@ -235,13 +244,17 @@ OPTIONS=color, menucolors
 MENUCOLOR=" blessed "=cyan
 MENUCOLOR=" uncursed "=green
 MENUCOLOR=" cursed "=orange
-MENUCOLOR=" holy "=cyan
+MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
+
+##### Level Annotations #####
+MENUCOLOR="Level .*\:"=green
+MENUCOLOR="You are here"=blue
 
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
 MENUCOLOR=" red (gem|dragon|glass)"=red
-MENUCOLOR=" blue (gem|dragon|glass)"=blue
+MENUCOLOR=" blue (gem|dragon|glass)"=brightblue
 MENUCOLOR=" green (gem|dragon|glass)"=green
 MENUCOLOR=" orange (gem|dragon|glass)"=orange
 MENUCOLOR=" white (gem|dragon|glass)"=white
@@ -275,30 +288,30 @@ MENUCOLOR="black opal"=black
 
 ######## Equipment ##########
 MENUCOLOR=" \((being|wielded|weapon|at the ready)"=gray&underline
-MENUCOLOR=" blessed (.*) \((being|wielded|weapon|at the ready)"=cyan&underline
-MENUCOLOR=" uncursed (.*) \((being|wielded|weapon|at the ready)"=green&underline
+MENUCOLOR=" blessed (.*) \((being|wielded|weapon|at the ready)"=brightcyan&underline
+MENUCOLOR=" uncursed (.*) \((being|wielded|weapon|at the ready)"=brightgreen&underline
 MENUCOLOR=" cursed (.*) \((being|wielded|weapon|at the ready)"=red&underline
 MENUCOLOR="\(lit\)"=yellow&underline
 
 ####### Quest Items ########
-MENUCOLOR="bell of opening"=blue&bold
-MENUCOLOR="silver bell"=blue&bold
-MENUCOLOR="Book of the Dead"=blue&bold
-MENUCOLOR="papyrus spellbook"=blue&bold
-MENUCOLOR="candelabrum"=blue&bold
+MENUCOLOR="Bell of Opening"=brightblue&bold
+MENUCOLOR="silver bell"=brightblue&bold
+MENUCOLOR="Book of the Dead"=brightblue&bold
+MENUCOLOR="papyrus spellbook"=brightblue&bold
+MENUCOLOR="(C|c)andelabrum"=brightblue&bold
 
 ######### Wishing ###########
-MENUCOLOR="wishing"=blue&bold
+MENUCOLOR="wishing"=brightblue&bold
 
 ###### Amulet of Yendor #####
-MENUCOLOR="Amulet of Yendor named real"=blue&bold
+MENUCOLOR="Amulet of Yendor named real"=brightblue&bold
 # Cast it into the fire! Destroy it!
-MENUCOLOR="cheap plastic imitation"=magenta&underline
+MENUCOLOR="cheap plastic imitation"=brightmagenta&underline
 
 ###### Dangerous Items ######
-MENUCOLOR="wand (of|called) cancellation"=magenta&underline
-MENUCOLOR="loadstone"=magenta&underline
-MENUCOLOR="c(hi|o)ckatrice corpse.*"=magenta&underline
+MENUCOLOR="wand (of|called) cancellation"=brightmagenta&underline
+MENUCOLOR="loadstone"=brightmagenta&underline
+MENUCOLOR="c(hi|o)ckatrice corpse.*"=brightmagenta&underline
 
 ########## Spells ###########
 MENUCOLOR="(gone)"=magenta
@@ -310,52 +323,78 @@ MENUCOLOR="\[Expert\]"=brightgreen
 MENUCOLOR="\[Master\]"=cyan
 MENUCOLOR="\[Grand Master\]"=brightcyan
 
+########### Money ###########
+MENUCOLOR="gold piece"=yellow
+
 ###################################
-########### Statuscolors ##########
+######## Status Highlights ########
 ###################################
 # Options relating to status highlighting.
 OPTIONS=statushilites:10
-OPTIONS=statuscolors
 
 ########### Hit Points ############
-STATUSCOLOR=hp%100:white
-STATUSCOLOR=hp%99:brightgreen&inverse
-STATUSCOLOR=hp%80:green&inverse
-STATUSCOLOR=hp%60:yellow&inverse
-STATUSCOLOR=hp%50:orange&inverse
-STATUSCOLOR=hp%40:red&inverse
-STATUSCOLOR=hp%20red&bold&inverse
-STATUSCOLOR=hp%10magenta&bold&inverse
+OPTIONS=hilite_status:hitpoints/100%/white
+OPTIONS=hilite_status:hitpoints/<100%/brightgreen
+OPTIONS=hilite_status:hitpoints/<80%/green
+OPTIONS=hilite_status:hitpoints/<60%/yellow
+OPTIONS=hilite_status:hitpoints/<50%/orange
+OPTIONS=hilite_status:hitpoints/<40%/red
+OPTIONS=hilite_status:hitpoints/<20%/red&bold
+OPTIONS=hilite_status:hitpoints-max/up/green&bold/down/red&bold
+OPTIONS=hilite_status:hitpoints/criticalhp/magenta&inverse
 
 ############ Power ################
-STATUSCOLOR=pw%100:white
-STATUSCOLOR=pw%99:brightgreen&inverse
-STATUSCOLOR=pw%80:green&inverse
-STATUSCOLOR=pw%60:yellow&inverse
-STATUSCOLOR=pw%50:orange&inverse
-STATUSCOLOR=pw%40:red&inverse
-STATUSCOLOR=pw%20red&bold&inverse
-STATUSCOLOR=pw%10magenta&bold&inverse
+OPTIONS=hilite_status:power/100%/white
+OPTIONS=hilite_status:power/<100%/brightgreen
+OPTIONS=hilite_status:power/<80%/green
+OPTIONS=hilite_status:power/<60%/yellow
+OPTIONS=hilite_status:power/<50%/orange
+OPTIONS=hilite_status:power/<40%/red
+OPTIONS=hilite_status:power/<20%/red&bold
+OPTIONS=hilite_status:power-max/up/green&bold/down/red&bold
+
+########## Armor Class ############
+OPTIONS=hilite_status:armor-class/always/cyan/up/red&bold/down/green&bold
+OPTIONS=hilite_status:armor-class/<0/brightcyan
+
+######### Dungeon Level ###########
+OPTIONS=hilite_status:dungeon-level/always/brown/changed/orange
 
 ######### Encumberance ############
-STATUSCOLOR=burdened:yellow,stressed:orange,strained:orange,overtaxed:red,overloaded:red
+OPTIONS=hilite_status:carrying-capacity/burdened/yellow/stressed/orange/strained/orange/overtaxed/red/overloaded/red
+
+########## Experience #############
+OPTIONS=hilite_status:experience-level/up/green&bold/down/red&bold
+OPTIONS=hilite_status:experience-level/=14/brightmagenta&bold
+OPTIONS=hilite_status:experience-level/=30/green&bold
+OPTIONS=hilite_status:experience/up/white&bold/down/gray&bold
 
 ############ Hunger ###############
-STATUSCOLOR=hungry:yellow,weak:orange,fainting:red,satiated:yellow
+OPTIONS=hilite_status:hunger/hungry/yellow/weak/orange/fainting/red/satiated/yellow
 
 ########### Troubles ##############
-STATUSCOLOR=Slime:brightgreen
-STATUSCOLOR=Stone:white
-STATUSCOLOR=Strngl:blue
-STATUSCOLOR=Foodpois:red
-STATUSCOLOR=Termill:green
-STATUSCOLOR=Ill:green
-STATUSCOLOR=Conf:yellow
-STATUSCOLOR=Hallu:yellow
-STATUSCOLOR=Stun:yellow
+OPTIONS=hilite_status:condition/slime/brightgreen
+OPTIONS=hilite_status:condition/stone/white
+OPTIONS=hilite_status:condition/strngl/blue
+OPTIONS=hilite_status:condition/foodpois/red
+OPTIONS=hilite_status:condition/termill/green
+OPTIONS=hilite_status:condition/minor_troubles/yellow/movement/cyan
 
-########### Money ###########
-MENUCOLOR="gold piece"=yellow
+########### Alignment #############
+OPTIONS=hilite_status:alignment/changed/brightmagenta&bold/chaotic/red/lawful/white/neutral/gray
+
+############# Gold ################
+OPTIONS=hilite_status:gold/always/yellow/up/yellow&bold/down/orange&bold
+
+######### Characteristics #########
+OPTIONS=hilite_status:characteristics/up/brightcyan&bold/down/red&bold
+OPTIONS=hilite_status:characteristics/>18/brightcyan
+OPTIONS=hilite_status:characteristics/=18/cyan
+OPTIONS=hilite_status:characteristics/<18/brightgreen
+OPTIONS=hilite_status:characteristics/<14/green
+OPTIONS=hilite_status:characteristics/<11/yellow
+OPTIONS=hilite_status:characteristics/<=8/orange
+OPTIONS=hilite_status:characteristics/<=6/red
 
 ##########################
 ######## Messages ########

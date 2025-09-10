@@ -1,8 +1,14 @@
 ###########################################
-####### AntiGulp's NetHack RC File ########
+###### AntiGulp's GruntHack RC File #######
 # Hi, I'm AntiGulp!
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
+
+#################################
+####### GRUNTHACK OPTIONS #######
+#################################
+# Don't show monster races since that would get confusing.
+OPTIONS=!showmonrace
 
 #################################
 ######## Personalization ########
@@ -11,15 +17,15 @@
 # The name of your character.
 OPTIONS=name:Antigulp
 # Default name for your starting pet if it is a cat.
-OPTIONS=catname:Lidda
+OPTIONS=catname:Sydney
 # Default name for your starting pet if it is a dog.
-OPTIONS=dogname:Tordek
+OPTIONS=dogname:Ashley
 # Default name for your starting pet if it is a horse.
-OPTIONS=horsename:Redgar
+OPTIONS=horsename:Merlose
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:trail ration
+OPTIONS=fruit:memory
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
