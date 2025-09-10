@@ -63,7 +63,7 @@ OPTIONS=mention_walls
 # Sort loot always.
 OPTIONS=sortloot:full
 # Autounlock ask optimization.
-OPTIONS=autounlock:apply-key+kick+force
+OPTIONS=autounlock:apply-key+kick
 
 ############################
 ####### Autocomplete #######
