@@ -6,8 +6,8 @@
 - clean: ['~/.config']
 
 - link:
-    ~/.nethackrc: nethack/.nethackrc
-    ~/.crecellehackrc: nethack/.crecellehackrc
+    ~/.nethackrc: nethack/3.7/.nethackrc
+    ~/.crecellehackrc: nethack/3.7/.crecellehackrc
     ~/.zshrc: zsh/.zshrc
     ~/.config/alacritty: alacritty
     ~/.config/nvim: nvim
