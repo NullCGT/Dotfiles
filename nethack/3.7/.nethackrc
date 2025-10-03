@@ -110,7 +110,6 @@ SYMBOLS=S_golem:7
 SYMBOLS=S_ghost:8
 # The symset to use when displaying characters.
 OPTIONS=symset:Enhanced1
-OPTIONS=roguesymset:Plain
 # Custom symbol replacement (terrain and regions)
 OPTIONS=S_cloud: U+00A7
 OPTIONS=S_corr: U+2592
@@ -134,6 +133,7 @@ OPTIONS=S_throne: U+0409
 # OPTIONS=S_polymorph_trap: U+2117
 # OPTIONS=S_level_teleporter: U+1F809
 # OPTIONS=S_teleportation_trap: U+1F80A
+OPTIONS=roguesymset:Plain
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.
