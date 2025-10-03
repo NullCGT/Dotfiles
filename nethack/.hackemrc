@@ -268,8 +268,8 @@ MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
 
 ##### Level Annotations #####
-MENUCOLOR="Level .*\:"=green
-MENUCOLOR="You are here"=blue
+MENUCOLOR="Level .*\:"=gray&reverse
+MENUCOLOR="You are here"=green&reverse
 
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
@@ -345,6 +345,16 @@ MENUCOLOR="\[Grand Master\]"=brightcyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow
+
+######## Enlightment ########
+MENUCOLOR="Background:"=white&reverse
+MENUCOLOR="Basics:"=white&reverse
+MENUCOLOR="Characteristics:"=white&reverse
+MENUCOLOR="Status:"=white&reverse
+MENUCOLOR="Attributes:"=white&reverse
+MENUCOLOR="Miscellaneous:"=white&reverse
+MENUCOLOR="Major events:"=white&reverse
+MENUCOLOR="Game over:"=white&reverse
 
 ###################################
 ######## Status Highlights ########

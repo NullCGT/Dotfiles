@@ -27,7 +27,7 @@ OPTIONS=horsename:Swiftwind
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
 OPTIONS=fruit:BowBurger 
 # Uncomment this line to start without a pet.
-OPTIONS=nopet
+# OPTIONS=nopet
 # Comment out this line to get a tutorial
 OPTIONS=notutorial
 # Comment out this line to get tips
@@ -85,6 +85,8 @@ AUTOCOMPLETE=travel,twoweapon,options,optionsfull,known,knownclass
 BIND=~:rub
 # Bind dip to !
 BIND=!:dip
+# Bind optionsfull to O to simulate pre-3.7 options menu behavior
+BIND=O:optionsfull
 
 ###############################
 ######## Connectivity #########
@@ -114,30 +116,28 @@ SYMBOLS=S_golem:7
 SYMBOLS=S_ghost:8
 # The symset to use when displaying characters.
 OPTIONS=symset:Enhanced1
+OPTIONS=roguesymset:Plain
 # Custom symbol replacement (terrain and regions)
 OPTIONS=S_cloud: U+00A7
-OPTIONS=S_corr: U+2592
 SYMBOLS=S_ice: U+025E6
-OPTIONS=S_litcorr: U+2592
 OPTIONS=S_poisoncloud: U+00A7
 OPTIONS=S_stone: U+2591
 OPTIONS=S_throne: U+0409
 # Custom symbol replacement (traps)
 # OPTIONS=S_arrow_trap: U+2B4E
-OPTIONS=S_bear_trap: U+2324
+# OPTIONS=S_bear_trap: U+2324
 # OPTIONS=S_dart_trap: U+2B4F
-OPTIONS=S_falling_rock_trap: U+21E3
-OPTIONS=S_rolling_boulder_trap: U+2389
-OPTIONS=S_rust_trap: U+25BC
-OPTIONS=S_sleeping_gas_trap: U+23FE
-OPTIONS=S_fire_trap: U+25B2
-OPTIONS=S_anti_magic_trap: U+29C4
-OPTIONS=S_magic_trap: U+238A
-OPTIONS=S_magic_portal: U+2386
-OPTIONS=S_polymorph_trap: U+2117
-OPTIONS=S_level_teleporter: U+1F809
-OPTIONS=S_teleportation_trap: U+1F80A
-OPTIONS=roguesymset:Plain
+# OPTIONS=S_falling_rock_trap: U+21E3
+# OPTIONS=S_rolling_boulder_trap: U+2389
+# OPTIONS=S_rust_trap: U+25BC
+# OPTIONS=S_sleeping_gas_trap: U+23FE
+# OPTIONS=S_fire_trap: U+25B2
+# OPTIONS=S_anti_magic_trap: U+29C4
+# OPTIONS=S_magic_trap: U+238A
+# OPTIONS=S_magic_portal: U+2386
+# OPTIONS=S_polymorph_trap: U+2117
+# OPTIONS=S_level_teleporter: U+1F809
+# OPTIONS=S_teleportation_trap: U+1F80A
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.
@@ -287,8 +287,8 @@ MENUCOLOR=" holy "=brightcyan
 MENUCOLOR=" unholy "=orange
 
 ##### Level Annotations #####
-MENUCOLOR="Level .*\:"=green
-MENUCOLOR="You are here"=blue
+MENUCOLOR="Level .*\:"=white&reverse
+MENUCOLOR="You are here"=green&reverse
 
 ###### Colored Items ########
 MENUCOLOR=" white (gem|dragon|glass)"=white
@@ -364,6 +364,16 @@ MENUCOLOR="\[Grand Master\]"=brightcyan
 
 ########### Money ###########
 MENUCOLOR="gold piece"=yellow
+
+######## Enlightment ########
+MENUCOLOR="Background:"=white&reverse
+MENUCOLOR="Basics:"=white&reverse
+MENUCOLOR="Characteristics:"=white&reverse
+MENUCOLOR="Status:"=white&reverse
+MENUCOLOR="Attributes:"=white&reverse
+MENUCOLOR="Miscellaneous:"=white&reverse
+MENUCOLOR="Major events:"=white&reverse
+MENUCOLOR="Game over:"=white&reverse
 
 ###################################
 ######## Status Highlights ########
