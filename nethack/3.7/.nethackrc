@@ -74,13 +74,11 @@ AUTOCOMPLETE=travel,twoweapon,options,optionsfull,known,knownclass
 ###########################
 ######## Keybinds #########
 ###########################
-# Commands to bind to specific keys.
-# Bind rub to ~
 BIND=~:rub
-# Bind dip to !
 BIND=!:dip
-# Bind optionsfull to O to simulate pre-3.7 options menu behavior
 BIND=O:optionsfull
+BIND=v:toggle(verbose) 
+BIND=V:toggle(autodig)
 
 ###############################
 ######## Connectivity #########
@@ -183,6 +181,8 @@ OPTIONS=toptenwin
 OPTIONS=windowcolors:menu white/black message white/black status white/black
 # Reverse video for "--More--"
 OPTIONS=standout
+# Packorder
+OPTIONS=packorder:)%/("=?![+*`0_
 
 #####################################
 ######## Curses-Specific GUI ########

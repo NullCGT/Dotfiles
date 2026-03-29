@@ -1,1 +1,9 @@
-@theme "/usr/share/rofi/themes/sidebar.rasi"
+configuration {
+    modi:"window,drun,ssh,combi";
+    show-icons: true;
+    terminal: "alacritty";
+}
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+
+
+@theme "/usr/share/rofi/themes/dmenu.rasi"
