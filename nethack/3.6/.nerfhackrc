@@ -5,10 +5,19 @@
 ###########################################
 
 #################################
-####### NerfHack OPTIONS ########
+####### NERFHACK OPTIONS ########
 #################################
 # Default name for your starting pet if it is a hawk.
 OPTIONS=familiarname:Bad Familiar
+
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
 
 #################################
 ######## Personalization ########
@@ -25,24 +34,17 @@ OPTIONS=horsename:Bad Horse
 # Starting gender.
 # OPTIONS=gender:female
 # Fruit name. Fruits are renamed to this. Defaults to "slime mold."
-OPTIONS=fruit:nerf darts
+OPTIONS=fruit:nerf dart
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
-
-##########################
-####### Challenges #######
-##########################
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
 
 ########################
 ####### Controls #######
 ########################
 # Method of controlling the character.
 OPTIONS=number_pad:0
+# Enable meta keys
+OPTIONS=altmeta
 
 ########################
 ####### Gameplay #######
@@ -104,7 +106,7 @@ SYMBOLS=S_golem:7
 SYMBOLS=S_ghost:8
 # The symset to use when displaying characters.
 OPTIONS=symset:DECgraphics
-OPTIONS=roguesymset:Plain
+OPTIONS=roguesymset:RogueEpyx
 # Highlight tame monsters.
 OPTIONS=hilite_pet
 # Highlight piles of items.

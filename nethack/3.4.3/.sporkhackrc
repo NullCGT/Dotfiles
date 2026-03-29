@@ -4,6 +4,15 @@
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
 
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+
 #################################
 ######## Personalization ########
 #################################
@@ -23,20 +32,13 @@ OPTIONS=fruit:chocobo steak
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
-##########################
-####### Challenges #######
-##########################
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
-
 ########################
 ####### Controls #######
 ########################
 # Method of controlling the character.
 OPTIONS=number_pad:0
+# Enable meta keys
+OPTIONS=altmeta
 
 ########################
 ####### Gameplay #######

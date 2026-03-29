@@ -5,7 +5,7 @@
 ###########################################
 
 #################################
-### dNetHack Gameplay Options ###
+######## DNETHACK OPTIONS #######
 #################################
 # Stolen from various dNetHack players.
 # Turn off role-specific item names
@@ -75,6 +75,15 @@ MSGTYPE=stop "You are gradually rotting to dust!"
 MSGTYPE=stop "You stop shedding dust."
 MSGTYPE=stop "You slow down."
 
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+
 #################################
 ######## Personalization ########
 #################################
@@ -94,20 +103,13 @@ OPTIONS=fruit:heap of pokechow
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
 
-##########################
-####### Challenges #######
-##########################
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
-
 ########################
 ####### Controls #######
 ########################
 # Method of controlling the character.
 OPTIONS=number_pad:0
+# Enable meta keys
+OPTIONS=altmeta
 
 ########################
 ####### Gameplay #######

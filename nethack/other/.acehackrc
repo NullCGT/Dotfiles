@@ -4,6 +4,15 @@
 # Feel free to copy any or all of these settings for yourself.
 ###########################################
 
+##########################
+####### Challenges #######
+##########################
+# Options pertaining to conducts and special runs. Uncomment to enable.
+# Start with a blindfold equipped.
+#OPTIONS=blind
+# Start without clothing.
+#OPTIONS=nudist
+
 #################################
 ######## Personalization ########
 #################################
@@ -22,15 +31,6 @@ OPTIONS=horsename:Diamonds
 OPTIONS=fruit:deck of cards
 # Uncomment this line to start without a pet.
 #OPTIONS=nopet
-
-##########################
-####### Challenges #######
-##########################
-# Options pertaining to conducts and special runs. Uncomment to enable.
-# Start with a blindfold equipped.
-#OPTIONS=blind
-# Start without clothing.
-#OPTIONS=nudist
 
 ########################
 ####### Gameplay #######
